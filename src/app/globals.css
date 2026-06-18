@@ -1,26 +1,238 @@
-@import "tailwindcss";
+@import "../styles/kadence-rowlayout.css";
+@import "../styles/kadence-column.css";
+@import "../styles/kadence-image.css";
+@import "../styles/theme.css";
+@import "../styles/kadence-home.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import "../styles/kadence-footer.css";
+
+.contenthome .postContent {
+  max-width: 100%;
+  width: 100%;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Hero banner typography — Kadence sizes must win over theme .postContent h1 */
+.contenthome .kt-adv-heading6_994461-8e {
+  font-size: 32px;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.contenthome .kt-adv-heading6_15a138-74 {
+  font-size: 22px;
+  line-height: 0.2;
+  text-align: center;
+  margin: 0;
+}
+
+/* United Kingdom locations — equal row rhythm */
+.kb-row-layout-id6_07c963-a3 a.location-heading {
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.kb-row-layout-id6_07c963-a3 .location-heading h3 {
+  margin: 0;
+}
+
+.kb-row-layout-id6_050e3a-10 > .kt-row-column-wrap,
+.kb-row-layout-id6_eefaaf-f5 > .kt-row-column-wrap,
+.kb-row-layout-id6_6cb6d2-75 > .kt-row-column-wrap {
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 143px;
+}
+
+.kb-row-layout-id6_050e3a-10 > .kt-row-column-wrap > .wp-block-kadence-column,
+.kb-row-layout-id6_eefaaf-f5 > .kt-row-column-wrap > .wp-block-kadence-column,
+.kb-row-layout-id6_6cb6d2-75 > .kt-row-column-wrap > .wp-block-kadence-column {
+  align-self: stretch;
+}
+
+.kb-row-layout-id6_050e3a-10 .kt-inside-inner-col,
+.kb-row-layout-id6_eefaaf-f5 .kt-inside-inner-col,
+.kb-row-layout-id6_6cb6d2-75 .kt-inside-inner-col {
+  justify-content: center;
+  min-height: 100%;
+}
+
+@media (max-width: 767px) {
+  .kb-row-layout-id6_050e3a-10 > .kt-row-column-wrap,
+  .kb-row-layout-id6_eefaaf-f5 > .kt-row-column-wrap,
+  .kb-row-layout-id6_6cb6d2-75 > .kt-row-column-wrap {
+    box-sizing: border-box;
+    min-height: 71px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* WordPress color utilities used in Plaza markup */
+.has-cream-color {
+  color: #f7f0e9 !important;
+}
+
+.has-white-1-color,
+.has-white-color {
+  color: #fff !important;
+}
+
+.has-blue-color {
+  color: #273d7f !important;
+}
+
+.has-cream-background-color {
+  background-color: #f7f0e9 !important;
+}
+
+.has-blue-background-color {
+  background-color: #273d7f !important;
+}
+
+/* Kadence video hero */
+.kb-blocks-bg-video-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.kb-blocks-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kb-row-layout-wrap.kt-row-has-bg {
+  position: relative;
+}
+
+.kb-row-layout-wrap.kt-row-has-bg > .kt-row-layout-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.kb-row-layout-wrap.kt-row-has-bg > .kt-row-column-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* Content shell */
+.contentwrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Button row helpers */
+.wp-block-buttons {
+  display: flex;
+}
+
+.is-content-justification-right {
+  justify-content: flex-end;
+}
+
+.is-content-justification-left {
+  justify-content: flex-start;
+}
+
+.wp-block-button__link {
+  text-decoration: none;
+}
+
+button.wp-block-button__link {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.clearfaceitalic,
+.postContent p.clearfaceitalic {
+  font-family: "ClearfaceItalic", serif;
+  margin: 0;
+}
+
+/* Hide booking/careers modals by default */
+.custom-modal {
+  display: none;
+}
+
+.custom-modal.open {
+  display: block;
+}
+
+/* Kadence ratio images — don't override kadence-image.css padding-bottom technique */
+.wp-block-kadence-image.kb-image-is-ratio-size {
+  width: 100%;
+}
+
+.kb-is-ratio-image {
+  width: 100%;
+}
+
+figure .kb-img {
+  width: 100%;
+  height: auto;
+}
+
+.kb-is-ratio-image .kb-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aligncenter {
+  text-align: center;
+}
+
+.aligncenter img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alignright {
+  text-align: right;
+}
+
+.alignright img {
+  margin-left: auto;
+}
+
+.alignfull {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  max-width: 100vw;
+}
+
+.alignwide {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kb-theme-content-width {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Spacer dividers in location list */
+.kt-divider {
+  border: none;
+  border-top: 1px solid #f7f0e9;
+  width: 98%;
+  margin: 0 auto;
+}
+
+/* Next.js image reset inside kadence figures */
+figure .kb-img {
+  width: 100%;
+  height: auto;
 }

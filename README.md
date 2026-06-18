@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Plaza Khao Gaeng — Next.js Template
 
-## Getting Started
+A Next.js recreation of [Plaza Khao Gaeng](https://plazakhaogaeng.com/), structured so all text, images, and links can be swapped without touching layout code.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customizing content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All editable site data lives under `src/content/`:
 
-## Learn More
+| File | What to edit |
+|------|----------------|
+| `site.ts` | Brand name, social links, opening hours, partner logos, booking/careers URLs |
+| `navigation.ts` | Header and mobile menu items |
+| `locations.ts` | Location pages (names, addresses, descriptions, menu links) |
+| `pages.ts` | Homepage, About, Menu, Locations, and Group Dining copy |
+| `faq.ts` | FAQ sections and answers |
 
-To learn more about Next.js, take a look at the following resources:
+### Replacing images
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Put new files in `public/images/`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `public/images/theme/` — logos, icons, UI SVGs
+- `public/images/uploads/` — photos and backgrounds
+- `public/fonts/` — custom web fonts
 
-## Deploy on Vercel
+Then update the paths in `src/content/` (e.g. `heroImage: "/images/uploads/your-photo.jpg"`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Pages included
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/` — Home
+- `/about-plaza-khao-gaeng` — About
+- `/menus` — Menu
+- `/locations` — Locations index
+- `/covent-garden`, `/borough-yards`, `/tottenham-court-road` — Location pages
+- `/group-dining` — Group dining
+- `/faq`, `/privacy`, `/cookies` — Legal & FAQ
+
+Gifting opens an external URL (configurable in `site.ts`). Book and Careers open modals with configurable links.
+
+## Project structure
+
+```
+src/
+  app/           # Next.js routes (thin wrappers)
+  components/    # Reusable UI (Header, Footer, modals, sections)
+  content/       # All site copy and configuration
+public/
+  fonts/         # Clearface, Noto, Sati fonts
+  images/        # Theme assets and page imagery
+```
+
+## Tech stack
+
+- Next.js 16 (App Router)
+- TypeScript
+- CSS ported from the original WordPress theme
