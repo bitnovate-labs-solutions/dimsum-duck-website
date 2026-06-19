@@ -9,6 +9,10 @@ const publicDir = path.join(root, "..", "public", "hero");
 const source = path.join(publicDir, "hero-video.source.mp4");
 const output = path.join(publicDir, "hero-video.mp4");
 
+const durationSeconds = 10;
+const width = 1280;
+const crf = 31;
+
 if (!ffmpegPath) {
   console.error("ffmpeg-static binary not found");
   process.exit(1);
@@ -25,8 +29,10 @@ execFileSync(
     "-y",
     "-i",
     source,
+    "-t",
+    String(durationSeconds),
     "-vf",
-    "scale=960:-2",
+    `scale=${width}:-2`,
     "-r",
     "24",
     "-c:v",
@@ -34,7 +40,7 @@ execFileSync(
     "-preset",
     "slow",
     "-crf",
-    "34",
+    String(crf),
     "-movflags",
     "+faststart",
     "-an",
@@ -46,4 +52,6 @@ execFileSync(
 );
 
 const { size } = fs.statSync(output);
-console.log(`hero-video.mp4 — ${(size / 1024).toFixed(0)} KB`);
+console.log(
+  `hero-video.mp4 — ${(size / 1024).toFixed(0)} KB (${width}px wide, ${durationSeconds}s loop)`,
+);
