@@ -260,13 +260,11 @@ figure .kb-img {
   inset: 0;
   overflow: hidden;
   z-index: 0;
-  background-color: var(--color-primary);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.dsd-hero-poster,
 .dsd-hero-media {
   position: absolute;
   inset: 0;
@@ -274,14 +272,7 @@ figure .kb-img {
   height: 100%;
   object-fit: cover;
   object-position: center;
-}
-
-.dsd-hero-poster {
   z-index: 0;
-}
-
-.dsd-hero-media {
-  z-index: 1;
 }
 
 .dsd-hero-bg::after {

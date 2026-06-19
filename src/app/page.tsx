@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { preload } from "react-dom";
 import { SiteShell } from "@/components/SiteShell";
 import { HomePageContent } from "@/components/pages/HomePageContent";
 import { homePage } from "@/content/pages";
@@ -11,12 +10,18 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  preload(homePage.hero.poster, { as: "image", fetchPriority: "high" });
-  preload(homePage.hero.media, { as: "image" });
-
   return (
-    <SiteShell headerVariant="overlay">
-      <HomePageContent />
-    </SiteShell>
+    <>
+      <link
+        rel="preload"
+        href={homePage.hero.media}
+        as="video"
+        type="video/mp4"
+        fetchPriority="high"
+      />
+      <SiteShell headerVariant="overlay">
+        <HomePageContent />
+      </SiteShell>
+    </>
   );
 }
