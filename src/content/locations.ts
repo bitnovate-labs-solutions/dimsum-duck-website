@@ -1,4 +1,5 @@
 import type { Location } from "./types";
+import { pageHeroImage } from "./heroImages";
 import { dsdImage } from "./locationImages";
 import { menuPdfFiles, sharedFoodMenus } from "./menuPdfs";
 
@@ -9,7 +10,7 @@ export const locations: Location[] = [
     nameChinese: "彭顿维尔路",
     address: "186 Pentonville Road, London, N1 9JP",
     googleMapsUrl: "https://share.google/rmK41h4RIadiO8jyu",
-    heroImage: dsdImage("Dim Sum Duck 090426-3560.jpg"),
+    heroImage: pageHeroImage("pentonville-road"),
     introImage: dsdImage("Dim Sum Duck 090426-3579.jpg"),
     introImageAlt: "Dim Sum Duck Pentonville Road dining room and open kitchen",
     gallery: [
@@ -73,7 +74,7 @@ export const locations: Location[] = [
     nameChinese: "国王十字路",
     address: "124 King's Cross Road, London WC1X 9DS",
     googleMapsUrl: "https://share.google/L9wacmkOhq1y9uKet",
-    heroImage: dsdImage("Dim Sum Duck 090426-3592.jpg"),
+    heroImage: pageHeroImage("kings-cross-road"),
     introImage: dsdImage("Dim Sum Duck 090426-3587.jpg"),
     introImageAlt: "Dim Sum Duck King's Cross Road dining room",
     gallery: [

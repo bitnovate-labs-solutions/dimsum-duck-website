@@ -10,7 +10,8 @@
 
   --font-display: "Cooper BT", "ClearfaceHeavy", Georgia, serif;
   --font-script: "Feeling Passionate", "ClearfaceItalic", cursive;
-  --font-body: "Noto", Georgia, serif;
+  --font-body: var(--font-noto-serif-sc), "PingFang SC", "Microsoft YaHei", Georgia,
+    serif;
 }
 
 @font-face {

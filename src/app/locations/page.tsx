@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/SiteShell";
+import { PageHero } from "@/components/PageHero";
 import { LocationHoverCard } from "@/components/LocationHoverCard";
 import { locationsPage } from "@/content/pages";
 import { locations } from "@/content/locations";
@@ -13,15 +14,11 @@ export const metadata: Metadata = {
 export default function LocationsPage() {
   return (
     <SiteShell headerVariant="overlay">
-      <div
-        className="page-hero"
-        style={{ backgroundImage: `url(${locationsPage.heroImage})` }}
-      >
-        <div className="page-hero-content">
-          <h1 className="page-hero-title">{locationsPage.heroTitle}</h1>
-          <p className="page-hero-zh chinese">{locationsPage.heroTitleZh}</p>
-        </div>
-      </div>
+      <PageHero
+        image={locationsPage.heroImage}
+        title={locationsPage.heroTitle}
+        titleZh={locationsPage.heroTitleZh}
+      />
 
       <div className="content locations-page">
         <div className="postContent">

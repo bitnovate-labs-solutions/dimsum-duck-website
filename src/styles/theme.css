@@ -1,15 +1,6 @@
 /*
-Theme Name: Plaza Khao Gaeng
-Version: 1.0
-Description: WordPress theme for Plaza Khao Gaeng
-Author: INSPIRE
-Author URI: http://www.inspiredm.co.uk
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: plazakhaogaeng
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+Dim Sum Duck site styles
+Derived from the original WordPress/Kadence theme layout.
 */
 
 /*** General ***/
@@ -72,21 +63,6 @@ a img {
   font-weight: normal;
   font-style: italic;
   font-display: swap;
-}
-@font-face {
-  font-family: var(--font-body);
-  src: url("/fonts/NotoSerifThai-VariableFont.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Sati";
-  src: url("/fonts/Sati.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0E00-0E7F;
 }
 
 /*** Header ***/
@@ -277,7 +253,7 @@ a img {
   color: var(--color-primary);
 }
 .mobile .mobile-main ul li a span {
-  font-family: "Sati";
+  font-family: var(--font-body);
   font-weight: 700;
 }
 .mobile-active span.top {
@@ -479,13 +455,8 @@ h6 {
 }
 .postContent h1 span,
 .postContent h2 span {
-  font-family: "Sati";
+  font-family: var(--font-body);
   font-weight: bold;
-}
-body.page-template-tpl_aboutpage h1 {
-  font-size: 6em;
-  position: relative;
-  margin: 0;
 }
 .postContent h2 {
   font-size: 2.5em;
@@ -508,21 +479,21 @@ body.page-template-tpl_aboutpage h1 {
   display: inline-block;
 }
 .location-heading .name-en,
-.location-heading .name-th {
+.location-heading .name-zh {
   display: inline-block;
   transition: opacity 0.3s ease;
 }
-.location-heading .name-th {
+.location-heading .name-zh {
   position: absolute;
   left: 0;
   opacity: 0;
   pointer-events: none;
-  font-family: "Sati", serif;
+  font-family: var(--font-body);
 }
 .location-heading:hover .name-en {
   opacity: 0;
 }
-.location-heading:hover .name-th {
+.location-heading:hover .name-zh {
   opacity: 1;
 }
 .location-heading .address {
@@ -797,9 +768,6 @@ h2.fullruled {
   opacity: 1;
   z-index: 100;
 }
-.thai-text {
-  font-family: "Sati", sans-serif;
-}
 .monotone-blue img {
   filter: grayscale(100%) contrast(1.2);
   mix-blend-mode: multiply;
@@ -1073,94 +1041,6 @@ h2.fullruled {
   z-index: 2;
 }
 
-/*** Booking Modal ***/
-.custom-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  inset: 0;
-  background: var(--color-cream);
-}
-.custom-modal-overlay {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.custom-modal .modal-content {
-  background: var(--color-cream);
-  width: 100%;
-  position: relative;
-  max-width: 1200px;
-}
-.custom-modal-close {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: var(--color-primary);
-  cursor: pointer;
-}
-body.modal-open {
-  overflow: hidden;
-}
-#booking-navigation .menu-book-container ul li:first-child::before {
-  display: none;
-}
-#booking-navigation .menu-book-container ul li::after,
-#careers-navigation .menu-careers-container ul li::after {
-  content: "";
-  position: absolute;
-  left: 10%;
-  right: 10%;
-  bottom: 0;
-  height: 1px;
-  background: var(--color-primary);
-  opacity: 0.25;
-}
-#booking-navigation .menu-book-container ul li,
-#careers-navigation .menu-careers-container ul li {
-  position: relative;
-  padding: 0.4em 0;
-  list-style: none;
-}
-.modal-content .mobile-main {
-  padding: 0;
-  text-align: center;
-  font-size: 2em;
-}
-#booking-navigation a,
-#careers-navigation a {
-  color: var(--color-primary);
-  text-transform: initial;
-  display: inline-block;
-  transition: 0.2s;
-}
-#booking-navigation a:hover,
-#careers-navigation a:hover {
-  transform: scale(110%);
-}
-.modallogo {
-  position: fixed;
-  z-index: 10000;
-  background: url("/images/theme/plaza-blue.png") no-repeat center;
-  width: 150px;
-  background-size: contain;
-  height: 100px;
-  left: calc(50% - 75px);
-  bottom: 5px;
-}
-#careers-navigation .menu-careers-container ul li.opportunities {
-  font-size: 0.75em;
-}
-#careers-navigation .menu-careers-container ul li.opportunities a:hover {
-  transform: none;
-}
-
 /*** Skip Links ***/
 .skip-link {
   position: absolute;
@@ -1414,9 +1294,6 @@ button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
   .header {
     height: 90px;
     --nav-logo-height: 75px;
-  }
-  .header .careersbutton a.book {
-    display: none;
   }
   .contentwrap {
     flex-direction: column;

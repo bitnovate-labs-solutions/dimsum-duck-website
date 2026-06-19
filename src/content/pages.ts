@@ -1,4 +1,5 @@
 import type { OurStorySection } from "./types";
+import { pageHeroImage } from "./heroImages";
 import { dsdImage } from "./locationImages";
 import { ourStoryImage } from "./ourStoryImages";
 
@@ -78,7 +79,7 @@ export const homePage = {
 export const ourStoryPage = {
   heroTitle: "Our Story",
   heroTitleZh: "关于我们",
-  heroImage: ourStoryImage("inspired by city", "IMG_4286.jpg"),
+  heroImage: pageHeroImage("our-story"),
   title: "Our Story",
   titleZh: "关于我们",
   introTitle: "From the Chef-Owner",
@@ -138,7 +139,7 @@ export const ourStoryPage = {
 export const menuPage = {
   title: "Menu",
   titleZh: "菜单",
-  heroImage: dsdImage("Dim Sum Duck 090426-2624.jpg"),
+  heroImage: pageHeroImage("menu"),
   heading: "Handmade Dim Sum & In-House Roasted Duck, Made Fresh Everyday",
   headingZh: "手工点心与店内烧鸭，每日新鲜制作",
   intro:
@@ -158,13 +159,13 @@ export const locationsPage = {
   heading: "Find us in King's Cross and Pentonville.",
   headingZh: "欢迎光临国王十字与彭顿维尔店。",
   region: "Locations",
-  heroImage: dsdImage("Dim Sum Duck 090426-2937.jpg"),
+  heroImage: pageHeroImage("locations"),
 };
 
 export const reviewsPage = {
   heroTitle: "Reviews",
   heroTitleZh: "评价",
-  heroImage: dsdImage("Dim Sum Duck 090426-3527.jpg"),
+  heroImage: pageHeroImage("reviews"),
   title: "Reviews",
   titleZh: "评价",
   heading: "What the press says",

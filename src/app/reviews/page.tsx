@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteShell } from "@/components/SiteShell";
+import { PageHero } from "@/components/PageHero";
 import { reviewsPage } from "@/content/pages";
 import { reviews } from "@/content/reviews";
 import { site } from "@/content";
@@ -13,15 +14,11 @@ export const metadata: Metadata = {
 export default function ReviewsPage() {
   return (
     <SiteShell headerVariant="overlay">
-      <div
-        className="page-hero"
-        style={{ backgroundImage: `url(${reviewsPage.heroImage})` }}
-      >
-        <div className="page-hero-content">
-          <h1 className="page-hero-title">{reviewsPage.heroTitle}</h1>
-          <p className="page-hero-zh chinese">{reviewsPage.heroTitleZh}</p>
-        </div>
-      </div>
+      <PageHero
+        image={reviewsPage.heroImage}
+        title={reviewsPage.heroTitle}
+        titleZh={reviewsPage.heroTitleZh}
+      />
 
       <div className="content reviews-page">
         <div className="postContent">

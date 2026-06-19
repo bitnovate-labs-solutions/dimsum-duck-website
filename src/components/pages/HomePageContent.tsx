@@ -1,7 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowButton } from "@/components/ArrowButton";
+import { HeroVideo } from "@/components/HeroVideo";
 import { homePage } from "@/content/pages";
 import { locations } from "@/content/locations";
 
@@ -35,16 +34,7 @@ export function HomePageContent() {
         {/* Hero */}
         <div className="kb-row-layout-wrap kb-row-layout-id6_6f4c1f-76 alignfull kt-row-has-bg wp-block-kadence-rowlayout dsd-hero">
           <div className="dsd-hero-bg">
-            <video
-              className="dsd-hero-video"
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster={hero.poster}
-            >
-              <source src={hero.video} type="video/mp4" />
-            </video>
+            <HeroVideo src={hero.video} />
           </div>
           <div className="dsd-hero-content">
             <h1 className="dsd-hero-title has-cream-color">{hero.title1}</h1>
@@ -308,7 +298,7 @@ export function HomePageContent() {
                                   <span className="dsd-home-location-name">
                                     <span className="name-wrap">
                                       <span className="name-en">{location.name}</span>
-                                      <span className="name-th">
+                                      <span className="name-zh">
                                         {location.nameChinese}
                                       </span>
                                     </span>

@@ -51,7 +51,7 @@
   min-height: 100%;
 }
 
-/* WordPress color utilities used in Plaza markup */
+/* WordPress color utilities used in Kadence markup */
 .has-cream-color {
   color: var(--color-cream) !important;
 }
@@ -136,15 +136,6 @@ button.wp-block-button__link {
 .postContent p.clearfaceitalic {
   font-family: var(--font-script);
   margin: 0;
-}
-
-/* Hide booking/careers modals by default */
-.custom-modal {
-  display: none;
-}
-
-.custom-modal.open {
-  display: block;
 }
 
 /* Kadence ratio images — don't override kadence-image.css padding-bottom technique */
@@ -269,6 +260,7 @@ figure .kb-img {
   inset: 0;
   overflow: hidden;
   z-index: 0;
+  background-color: var(--color-primary);
 }
 
 .dsd-hero-video {
@@ -276,6 +268,12 @@ figure .kb-img {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.dsd-hero-video--ready {
+  opacity: 1;
 }
 
 .dsd-hero-bg::after {
@@ -673,12 +671,12 @@ button.dsd-arrow-btn {
 }
 
 .dsd-home-location-row .name-en,
-.dsd-home-location-row .name-th {
+.dsd-home-location-row .name-zh {
   display: inline-block;
   transition: opacity 0.3s ease;
 }
 
-.dsd-home-location-row .name-th {
+.dsd-home-location-row .name-zh {
   position: absolute;
   left: 0;
   top: 0;
@@ -691,7 +689,7 @@ button.dsd-arrow-btn {
   opacity: 0;
 }
 
-.dsd-home-location-link:hover .name-th {
+.dsd-home-location-link:hover .name-zh {
   opacity: 1;
 }
 
@@ -1140,7 +1138,7 @@ button.dsd-arrow-btn {
   padding-bottom: 2.75rem;
 }
 
-/* Location detail page (Plaza Borough Yards style) */
+/* Location detail page */
 .location-detail-page {
   background: var(--color-cream);
 }
@@ -1441,14 +1439,22 @@ button.dsd-arrow-btn {
 /* Page hero (menu, FAQ, etc.) */
 .page-hero {
   position: relative;
+  overflow: hidden;
   min-height: 100vh;
   min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--color-primary);
-  background-size: cover;
-  background-position: center;
+}
+
+.page-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .page-hero::after {
@@ -1973,7 +1979,7 @@ button.dsd-arrow-btn {
   opacity: 0.85;
 }
 
-/* Our Story page (Plaza About style) */
+/* Our Story page */
 .our-story-intro {
   background: var(--color-cream);
   padding: 3rem 1.5rem 2.5rem;

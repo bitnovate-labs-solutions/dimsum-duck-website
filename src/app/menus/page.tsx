@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/SiteShell";
+import { PageHero } from "@/components/PageHero";
 import { MenuPageTabs } from "@/components/pages/MenuPageTabs";
 import { MenuDownloadSection } from "@/components/pages/MenuDownloadSection";
 import { menuCategories } from "@/content/menu";
@@ -14,15 +15,11 @@ export const metadata: Metadata = {
 export default function MenuPage() {
   return (
     <SiteShell headerVariant="overlay">
-      <div
-        className="page-hero"
-        style={{ backgroundImage: `url(${menuPage.heroImage})` }}
-      >
-        <div className="page-hero-content">
-          <h1 className="page-hero-title">{menuPage.title}</h1>
-          <p className="page-hero-zh chinese">{menuPage.titleZh}</p>
-        </div>
-      </div>
+      <PageHero
+        image={menuPage.heroImage}
+        title={menuPage.title}
+        titleZh={menuPage.titleZh}
+      />
 
       <div className="content menu-page">
         <div className="postContent">

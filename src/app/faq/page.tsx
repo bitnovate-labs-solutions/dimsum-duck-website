@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/SiteShell";
+import { PageHero } from "@/components/PageHero";
 import { FaqPageSections } from "@/components/FaqPageSections";
 import { faqIntro, faqSections } from "@/content/faq";
 import { site } from "@/content";
@@ -12,15 +13,11 @@ export const metadata: Metadata = {
 export default function FaqPage() {
   return (
     <SiteShell headerVariant="overlay">
-      <div
-        className="page-hero"
-        style={{ backgroundImage: `url(${faqIntro.heroImage})` }}
-      >
-        <div className="page-hero-content">
-          <h1 className="page-hero-title">{faqIntro.heroTitle}</h1>
-          <p className="page-hero-zh chinese">{faqIntro.heroTitleZh}</p>
-        </div>
-      </div>
+      <PageHero
+        image={faqIntro.heroImage}
+        title={faqIntro.heroTitle}
+        titleZh={faqIntro.heroTitleZh}
+      />
 
       <div className="content faq-page">
         <div className="postContent">

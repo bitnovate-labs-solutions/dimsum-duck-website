@@ -1,11 +1,11 @@
 import type { FaqSection } from "./types";
-import { dsdImage } from "./locationImages";
+import { pageHeroImage } from "./heroImages";
 import { site } from "./site";
 
 export const faqIntro = {
   heroTitle: "FAQ",
   heroTitleZh: "常见问题",
-  heroImage: dsdImage("Dim Sum Duck 090426-3518.jpg"),
+  heroImage: pageHeroImage("faq"),
   title: "Frequently Asked Questions",
   titleZh: "常见问题",
 };

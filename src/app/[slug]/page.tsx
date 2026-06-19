@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/SiteShell";
+import { PageHero } from "@/components/PageHero";
 import { LocationDetailSections } from "@/components/pages/LocationDetailSections";
 import { getLocation } from "@/content/locations";
 import { site } from "@/content";
@@ -34,15 +35,11 @@ export default async function LocationPage({ params }: Props) {
 
   return (
     <SiteShell headerVariant="overlay">
-      <div
-        className="page-hero"
-        style={{ backgroundImage: `url(${location.heroImage})` }}
-      >
-        <div className="page-hero-content">
-          <h1 className="page-hero-title">{location.name}</h1>
-          <p className="page-hero-zh chinese">{location.nameChinese}</p>
-        </div>
-      </div>
+      <PageHero
+        image={location.heroImage}
+        title={location.name}
+        titleZh={location.nameChinese}
+      />
 
       <div className="location-detail-page">
         <LocationDetailSections location={location} />

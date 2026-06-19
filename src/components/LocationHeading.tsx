@@ -16,7 +16,7 @@ export function LocationHeading({ location, light }: LocationHeadingProps) {
       >
         <span className="name-wrap">
           <span className="name-en">{location.name}</span>
-          <span className="name-th">{location.nameChinese}</span>
+          <span className="name-zh">{location.nameChinese}</span>
         </span>
         <span className="address">{location.address}</span>
       </h3>

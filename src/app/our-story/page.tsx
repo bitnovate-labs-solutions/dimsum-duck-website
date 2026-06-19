@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/SiteShell";
+import { PageHero } from "@/components/PageHero";
 import { OurStorySections } from "@/components/pages/OurStorySections";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ourStoryPage } from "@/content/pages";
@@ -13,15 +14,11 @@ export const metadata: Metadata = {
 export default function OurStoryPage() {
   return (
     <SiteShell headerVariant="overlay">
-      <div
-        className="page-hero"
-        style={{ backgroundImage: `url(${ourStoryPage.heroImage})` }}
-      >
-        <div className="page-hero-content">
-          <h1 className="page-hero-title">{ourStoryPage.heroTitle}</h1>
-          <p className="page-hero-zh chinese">{ourStoryPage.heroTitleZh}</p>
-        </div>
-      </div>
+      <PageHero
+        image={ourStoryPage.heroImage}
+        title={ourStoryPage.heroTitle}
+        titleZh={ourStoryPage.heroTitleZh}
+      />
 
       <div className="our-story-intro">
         <ScrollReveal className="our-story-intro-reveal">

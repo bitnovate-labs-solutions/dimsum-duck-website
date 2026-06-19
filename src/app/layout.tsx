@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
+import { Noto_Serif_SC } from "next/font/google";
 import { site } from "@/content";
 import "./globals.css";
+
+const notoSerifSC = Noto_Serif_SC({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-noto-serif-sc",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={notoSerifSC.variable}>
       <body>{children}</body>
     </html>
   );
