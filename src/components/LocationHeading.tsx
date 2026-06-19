@@ -3,7 +3,7 @@ import type { Location } from "@/content/types";
 import { ArrowButton } from "./ArrowButton";
 
 type LocationHeadingProps = {
-  location: Pick<Location, "name" | "nameThai" | "address" | "slug">;
+  location: Pick<Location, "name" | "nameChinese" | "address" | "slug">;
   light?: boolean;
 };
 
@@ -16,7 +16,7 @@ export function LocationHeading({ location, light }: LocationHeadingProps) {
       >
         <span className="name-wrap">
           <span className="name-en">{location.name}</span>
-          <span className="name-th">{location.nameThai}</span>
+          <span className="name-th">{location.nameChinese}</span>
         </span>
         <span className="address">{location.address}</span>
       </h3>
@@ -25,7 +25,7 @@ export function LocationHeading({ location, light }: LocationHeadingProps) {
 }
 
 type LocationRowProps = {
-  location: Pick<Location, "name" | "nameThai" | "address" | "slug">;
+  location: Pick<Location, "name" | "nameChinese" | "address" | "slug">;
   light?: boolean;
 };
 

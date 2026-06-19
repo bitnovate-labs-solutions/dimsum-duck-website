@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowButton } from "@/components/ArrowButton";
 import { homePage } from "@/content/pages";
 import { locations } from "@/content/locations";
-import { useModal } from "@/components/ModalProvider";
 
 const locationRowLayouts = [
   {
@@ -22,31 +22,21 @@ const locationRowLayouts = [
     headingId: "kt-adv-heading6_0afc54-4e",
     headingBlock: "kb-adv-heading6_0afc54-4e",
     linkClass: "kt-adv-heading-link6_0afc54-4e",
-    spacerId: "kt-block-spacer-6_ab017a-02",
-  },
-  {
-    rowId: "kb-row-layout-id6_6cb6d2-75",
-    leftCol: "kadence-column6_f3ea9e-c7",
-    rightCol: "kadence-column6_2259a9-b7",
-    headingId: "kt-adv-heading6_fc7166-0e",
-    headingBlock: "kb-adv-heading6_fc7166-0e",
-    linkClass: "kt-adv-heading-link6_fc7166-0e",
     spacerId: null,
   },
 ] as const;
 
 export function HomePageContent() {
-  const { openBook } = useModal();
-  const { hero, about, bookings, menu } = homePage;
+  const { hero, about, walkIn, menu } = homePage;
 
   return (
     <div className="contenthome">
       <div className="postContent">
-        {/* Hero video */}
-        <div className="kb-row-layout-wrap kb-row-layout-id6_6f4c1f-76 alignfull kt-row-has-bg wp-block-kadence-rowlayout">
-          <div className="kb-blocks-bg-video-container">
+        {/* Hero */}
+        <div className="kb-row-layout-wrap kb-row-layout-id6_6f4c1f-76 alignfull kt-row-has-bg wp-block-kadence-rowlayout dsd-hero">
+          <div className="dsd-hero-bg">
             <video
-              className="kb-blocks-bg-video"
+              className="dsd-hero-video"
               autoPlay
               muted
               loop
@@ -56,99 +46,43 @@ export function HomePageContent() {
               <source src={hero.video} type="video/mp4" />
             </video>
           </div>
-          <div className="kt-row-column-wrap kt-has-1-columns kt-row-layout-equal kt-row-valign-middle">
-            <div className="wp-block-kadence-column kadence-column6_4081cc-f8">
-              <div className="kt-inside-inner-col">
-                <div className="wp-block-kadence-spacer aligncenter kt-block-spacer-6_77e0b8-92">
-                  <div className="kt-block-spacer kt-block-spacer-halign-center" />
-                </div>
+          <div className="dsd-hero-content">
+            <h1 className="dsd-hero-title has-cream-color">{hero.title1}</h1>
+            <p className="dsd-hero-zh has-cream-color">{hero.title1Zh}</p>
 
-                <div className="kb-row-layout-wrap kb-row-layout-id6_d3756e-26 alignnone wp-block-kadence-rowlayout">
-                  <div className="kt-row-column-wrap kt-has-1-columns kt-row-layout-equal kt-tab-layout-inherit kt-mobile-layout-row kt-row-valign-top">
-                    <div className="wp-block-kadence-column kadence-column6_57a189-71 kvs-sm-false">
-                      <div className="kt-inside-inner-col">
-                        <h1
-                          className="kt-adv-heading6_994461-8e wp-block-kadence-advancedheading has-cream-color has-text-color"
-                          data-kb-block="kb-adv-heading6_994461-8e"
-                        >
-                          {hero.title1}
-                        </h1>
-                        <h1
-                          className="kt-adv-heading6_15a138-74 wp-block-kadence-advancedheading has-cream-color has-text-color"
-                          data-kb-block="kb-adv-heading6_15a138-74"
-                        >
-                          {hero.title2}
-                        </h1>
-                      </div>
-                    </div>
+            <p className="dsd-hero-subtitle has-cream-color">{hero.title2}</p>
+            <p className="dsd-hero-zh has-cream-color">{hero.title2Zh}</p>
 
-                    <div className="wp-block-kadence-column kadence-column6_791867-47 kvs-lg-false kvs-md-false">
-                      <div className="kt-inside-inner-col">
-                        <div className="wp-block-kadence-image kb-image6_87289e-88">
-                          <figure className="aligncenter size-full">
-                            <img
-                              src={hero.logo}
-                              alt="Plaza"
-                              className="kb-img"
-                              width={300}
-                              height={168}
-                            />
-                          </figure>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="wp-block-kadence-spacer aligncenter kt-block-spacer-6_42b8fd-17">
-                  <div className="kt-block-spacer kt-block-spacer-halign-center" />
-                </div>
-
-                <div className="kb-row-layout-wrap kb-row-layout-id6_c2dd8d-0f alignnone divider wp-block-kadence-rowlayout">
-                  <div className="kt-row-column-wrap kt-has-2-columns kt-row-layout-equal kt-row-valign-middle kt-inner-column-height-full">
-                    <div className="wp-block-kadence-column kadence-column6_601fa4-ce">
-                      <div className="kt-inside-inner-col">
-                        <div className="wp-block-buttons is-content-justification-right is-layout-flex wp-block-buttons-is-layout-flex">
-                          <div className="wp-block-button button-1">
-                            <Link
-                              className="wp-block-button__link wp-element-button"
-                              href="/locations"
-                            >
-                              LOCATIONS
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="wp-block-kadence-column kadence-column6_a30ccd-aa">
-                      <div className="kt-inside-inner-col">
-                        <div className="wp-block-buttons is-content-justification-left is-layout-flex wp-block-buttons-is-layout-flex">
-                          <div className="wp-block-button button-1 open-book-modal">
-                            <button
-                              type="button"
-                              className="wp-block-button__link wp-element-button"
-                              onClick={openBook}
-                            >
-                              RESERVATIONS
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="dsd-hero-ctas">
+              <Link
+                className="dsd-hero-btn"
+                href={hero.ctaLocations.href}
+              >
+                {hero.ctaLocations.label}
+              </Link>
+              <Link
+                className="dsd-hero-btn"
+                href={hero.ctaMenu.href}
+              >
+                {hero.ctaMenu.label}
+              </Link>
             </div>
           </div>
         </div>
 
         {/* About */}
-        <div className="kb-row-layout-wrap kb-row-layout-id6_d2820f-2e alignfull kt-row-has-bg wp-block-kadence-rowlayout">
+        <div
+          className="kb-row-layout-wrap kb-row-layout-id6_d2820f-2e alignfull kt-row-has-bg wp-block-kadence-rowlayout dsd-about-section"
+          style={{ backgroundImage: `url(${about.backgroundImage})` }}
+        >
           <div className="kt-row-layout-overlay kt-row-overlay-normal" />
           <div className="kt-row-column-wrap kt-has-1-columns kt-row-layout-equal kt-row-valign-top">
             <div className="wp-block-kadence-column kadence-column6_dd5382-6e">
               <div className="kt-inside-inner-col">
-                <h2 className="wp-block-heading ruledcream">About us</h2>
+                <h2 className="wp-block-heading ruledcream">
+                  {about.label}
+                  <span className="chinese"> {about.labelZh}</span>
+                </h2>
                 <h3 className="kt-adv-heading6_525d9e-09 wp-block-kadence-advancedheading has-cream-color has-text-color">
                   {about.heading}
                 </h3>
@@ -198,57 +132,42 @@ export function HomePageContent() {
                   </div>
                 </div>
 
-                {/* Bookings card over image */}
-                <div className="kb-row-layout-wrap kb-row-layout-id6_f5804d-0a alignfull kt-row-has-bg wp-block-kadence-rowlayout">
+                {/* Walk-in */}
+                <div
+                  className="kb-row-layout-wrap kb-row-layout-id6_f5804d-0a alignfull kt-row-has-bg wp-block-kadence-rowlayout dsd-walk-in-section"
+                  style={{
+                    backgroundImage: `url(${walkIn.backgroundImage})`,
+                    backgroundPosition: "center 22%",
+                  }}
+                >
                   <div className="kt-row-column-wrap kt-has-2-columns kt-row-layout-equal kt-row-valign-bottom">
                     <div className="wp-block-kadence-column kadence-column6_e48785-21">
                       <div className="kt-inside-inner-col" />
                     </div>
-                    <div className="wp-block-kadence-column kadence-column6_903170-db">
+                    <div className="wp-block-kadence-column kadence-column6_903170-db dsd-walk-in-card">
                       <div className="kt-inside-inner-col">
                         <h2 className="wp-block-heading ruledblue has--font-size fullruled">
-                          Bookings
+                          {walkIn.label}
+                          <span className="chinese"> {walkIn.labelZh}</span>
                         </h2>
                         <p className="kt-adv-heading6_a90fd0-c5 wp-block-kadence-advancedheading has-blue-color has-text-color">
-                          {bookings.text}
+                          {walkIn.text}
                         </p>
                         <div className="kb-row-layout-wrap kb-row-layout-id6_4e5394-19 alignnone wp-block-kadence-rowlayout">
                           <div className="kt-row-column-wrap kt-has-2-columns kt-row-layout-left-golden kt-row-valign-middle kb-theme-content-width">
                             <div className="wp-block-kadence-column kadence-column6_59a675-07">
                               <div className="kt-inside-inner-col">
                                 <p className="kt-adv-heading6_7db92b-7c clearfaceitalic wp-block-kadence-advancedheading has-blue-color has-text-color">
-                                  <em>
-                                    <button
-                                      type="button"
-                                      onClick={openBook}
-                                      style={{
-                                        background: "none",
-                                        border: "none",
-                                        cursor: "pointer",
-                                        font: "inherit",
-                                        color: "inherit",
-                                      }}
-                                    >
-                                      {bookings.cta}
-                                    </button>
-                                  </em>
+                                  <em>{walkIn.cta}</em>
                                 </p>
                               </div>
                             </div>
                             <div className="wp-block-kadence-column kadence-column6_3dafa1-ca">
                               <div className="kt-inside-inner-col">
-                                <div className="wp-block-buttons is-content-justification-right is-layout-flex wp-block-buttons-is-layout-flex">
-                                  <div className="wp-block-button button-blue open-book-modal">
-                                    <button
-                                      type="button"
-                                      className="wp-block-button__link wp-element-button"
-                                      onClick={openBook}
-                                      aria-label="Reserve now"
-                                    >
-                                      #
-                                    </button>
-                                  </div>
-                                </div>
+                                <ArrowButton
+                                  href={walkIn.ctaHref}
+                                  ariaLabel={walkIn.cta}
+                                />
                               </div>
                             </div>
                           </div>
@@ -263,11 +182,16 @@ export function HomePageContent() {
         </div>
 
         {/* Menu */}
-        <div className="kb-row-layout-wrap kb-row-layout-id6_8a1543-b9 alignfull wp-block-kadence-rowlayout">
+        <div className="kb-row-layout-wrap kb-row-layout-id6_8a1543-b9 alignfull wp-block-kadence-rowlayout home-section-link">
           <div className="kt-row-column-wrap kt-has-1-columns kt-row-layout-equal kt-row-valign-top">
             <div className="wp-block-kadence-column kadence-column6_304c77-68">
               <div className="kt-inside-inner-col">
-                <h2 className="wp-block-heading ruledblue">MENU</h2>
+                <Link href={menu.ctaHref} className="home-section-heading-link">
+                  <h2 className="wp-block-heading ruledblue">
+                    {menu.label}
+                    <span className="chinese"> {menu.labelZh}</span>
+                  </h2>
+                </Link>
               </div>
             </div>
           </div>
@@ -293,30 +217,22 @@ export function HomePageContent() {
                 <h5 className="kt-adv-heading6_3be3f7-b0 wp-block-kadence-advancedheading has-blue-color has-text-color">
                   {menu.description}
                 </h5>
+                <p className="dsd-menu-note has-blue-color">{menu.wineNote}</p>
                 <div className="kb-row-layout-wrap kb-row-layout-id6_98a997-7f alignnone wp-block-kadence-rowlayout">
                   <div className="kt-row-column-wrap kt-has-2-columns kt-row-layout-left-golden kt-row-valign-middle kb-theme-content-width">
                     <div className="wp-block-kadence-column kadence-column6_2aac28-63">
                       <div className="kt-inside-inner-col">
                         <p className="kt-adv-heading6_2e1e3b-6b clearfaceitalic wp-block-kadence-advancedheading has-blue-color has-text-color">
-                          <em>
-                            <Link href={menu.ctaHref}>{menu.cta}</Link>
-                          </em>
+                          <em>{menu.cta}</em>
                         </p>
                       </div>
                     </div>
                     <div className="wp-block-kadence-column kadence-column6_8fdfc2-8a">
                       <div className="kt-inside-inner-col">
-                        <div className="wp-block-buttons is-content-justification-right is-layout-flex wp-block-buttons-is-layout-flex">
-                          <div className="wp-block-button button-blue">
-                            <Link
-                              className="wp-block-button__link wp-element-button"
-                              href={menu.ctaHref}
-                              aria-label="Explore menus"
-                            >
-                              #
-                            </Link>
-                          </div>
-                        </div>
+                        <ArrowButton
+                          href={menu.ctaHref}
+                          ariaLabel="Explore our menu"
+                        />
                       </div>
                     </div>
                   </div>
@@ -357,60 +273,65 @@ export function HomePageContent() {
         </div>
 
         {/* Locations */}
-        <div className="kb-row-layout-wrap kb-row-layout-id6_07c963-a3 alignfull has-blue-background-color kt-row-has-bg wp-block-kadence-rowlayout">
+        <div className="kb-row-layout-wrap kb-row-layout-id6_07c963-a3 alignfull has-blue-background-color kt-row-has-bg wp-block-kadence-rowlayout home-section-link">
           <div className="kt-row-column-wrap kt-has-1-columns kt-row-layout-equal kt-tab-layout-inherit kt-mobile-layout-row kt-row-valign-top">
             <div className="wp-block-kadence-column kadence-column6_57084c-1b">
               <div className="kt-inside-inner-col">
-                <h2 className="wp-block-heading ruledcream has--font-size">
-                  United Kingdom
-                </h2>
+                <Link href="/locations" className="home-section-heading-link">
+                  <h2 className="wp-block-heading ruledcream has--font-size">
+                    {homePage.locations.region}
+                  </h2>
+                </Link>
 
                 {locations.map((location, index) => {
                   const layout = locationRowLayouts[index];
                   return (
                     <div key={location.slug}>
                       <div
-                        className={`kb-row-layout-wrap ${layout.rowId} alignnone wp-block-kadence-rowlayout`}
+                        className={`kb-row-layout-wrap ${layout.rowId} alignnone wp-block-kadence-rowlayout dsd-home-location-row`}
                       >
                         <div className="kt-row-column-wrap kt-has-2-columns kt-row-layout-equal kt-tab-layout-inherit kt-mobile-layout-equal kt-row-valign-middle">
                           <div
                             className={`wp-block-kadence-column ${layout.leftCol}`}
                           >
                             <div className="kt-inside-inner-col">
-                              <Link
-                                href={`/${location.slug}`}
-                                className={`kb-advanced-heading-link ${layout.linkClass} location-heading`}
+                              <a
+                                href={location.googleMapsUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`kb-advanced-heading-link ${layout.linkClass} dsd-home-location-link`}
                               >
                                 <h3
                                   className={`${layout.headingId} wp-block-kadence-advancedheading has-cream-color has-text-color`}
                                   data-kb-block={layout.headingBlock}
                                 >
-                                  <span className="name-en">{location.name}</span>
-                                  <span className="name-th">
-                                    {location.nameThai}
-                                  </span>{" "}
-                                  <span className="address">
-                                    {location.address}
+                                  <span className="dsd-home-location-name">
+                                    <span className="name-wrap">
+                                      <span className="name-en">{location.name}</span>
+                                      <span className="name-th">
+                                        {location.nameChinese}
+                                      </span>
+                                    </span>
+                                    <span className="address">
+                                      {location.address}
+                                    </span>
+                                  </span>
+                                  <span className="hours-short">
+                                    {location.hoursShort}
                                   </span>
                                 </h3>
-                              </Link>
+                              </a>
                             </div>
                           </div>
                           <div
-                            className={`wp-block-kadence-column ${layout.rightCol}`}
+                            className={`wp-block-kadence-column ${layout.rightCol} dsd-home-location-btn-col`}
                           >
                             <div className="kt-inside-inner-col">
-                              <div className="wp-block-buttons is-content-justification-right is-layout-flex wp-block-buttons-is-layout-flex">
-                                <div className="wp-block-button button-cream">
-                                  <Link
-                                    className="wp-block-button__link wp-element-button"
-                                    href={`/${location.slug}`}
-                                    aria-label={`View ${location.name}`}
-                                  >
-                                    #
-                                  </Link>
-                                </div>
-                              </div>
+                              <ArrowButton
+                                href={`/${location.slug}`}
+                                variant="cream"
+                                ariaLabel={`View ${location.name}`}
+                              />
                             </div>
                           </div>
                         </div>

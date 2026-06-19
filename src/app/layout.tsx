@@ -3,7 +3,15 @@ import { site } from "@/content";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: `Site - ${site.name}`,
+  title: {
+    default: site.title,
+    template: `%s - ${site.name}`,
+  },
+  description: site.description,
+  icons: {
+    icon: "/logos/logo-1.png",
+    apple: "/logos/logo-1.png",
+  },
 };
 
 export default function RootLayout({

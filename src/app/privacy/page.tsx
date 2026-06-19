@@ -85,7 +85,9 @@ export default function PrivacyPage() {
             <br />
             Email: {site.contactEmail}
             <br />
-            Address: {site.contactAddress}
+            WhatsApp: {site.social.whatsappDisplay}
+            <br />
+            Instagram: @dimsumandduck
           </p>
 
           <p>

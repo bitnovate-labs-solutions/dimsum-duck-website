@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { SiteShell } from "@/components/SiteShell";
+import { MenuPageTabs } from "@/components/pages/MenuPageTabs";
+import { MenuDownloadSection } from "@/components/pages/MenuDownloadSection";
+import { menuCategories } from "@/content/menu";
 import { menuPage } from "@/content/pages";
-import { locations } from "@/content/locations";
 import { site } from "@/content";
 
 export const metadata: Metadata = {
@@ -11,52 +12,41 @@ export const metadata: Metadata = {
 };
 
 export default function MenuPage() {
-  const menuImages: Record<string, string> = {
-    "tottenham-court-road": "/images/uploads/25.10.24-PLAZA-BOROUGH-232.jpg",
-    "borough-yards": "/images/uploads/25.10.23-PLAZA-BOROUGH-1275.jpg",
-    "covent-garden": "/images/uploads/26.3.31-COVENT-GARDEN-1-879.jpg",
-  };
-
   return (
-    <SiteShell showFixedLogo>
-      <div className="content">
-        <div className="postContent">
-          <h1>
-            {menuPage.title}
-            <span className="thai"> {menuPage.titleThai}</span>
-          </h1>
-          <h3>{menuPage.heading}</h3>
-
-          <h2 style={{ marginTop: "3rem" }}>{menuPage.region}</h2>
-
-          {locations.map((location) => (
-            <section key={location.slug} className="menu-location-block">
-              <h3>
-                {location.name}
-                <br />
-                <span className="address" style={{ fontSize: "0.5em" }}>
-                  {location.address}
-                </span>
-              </h3>
-              <div className="menu-links">
-                {location.menuLinks.map((link) => (
-                  <a key={link.label} href={link.href}>
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-              <div style={{ marginTop: "2rem" }}>
-                <Image
-                  src={menuImages[location.slug]}
-                  alt={location.name}
-                  width={1200}
-                  height={800}
-                  style={{ width: "100%", height: "auto" }}
-                />
-              </div>
-            </section>
-          ))}
+    <SiteShell headerVariant="overlay">
+      <div
+        className="page-hero"
+        style={{ backgroundImage: `url(${menuPage.heroImage})` }}
+      >
+        <div className="page-hero-content">
+          <h1 className="page-hero-title">{menuPage.title}</h1>
+          <p className="page-hero-zh chinese">{menuPage.titleZh}</p>
         </div>
+      </div>
+
+      <div className="content menu-page">
+        <div className="postContent">
+          <h3>{menuPage.heading}</h3>
+          <p className="chinese menu-page-subtitle">{menuPage.headingZh}</p>
+          <p>{menuPage.intro}</p>
+          <p className="chinese">{menuPage.introZh}</p>
+          <p className="menu-wine-note">
+            <strong>{menuPage.wineNote}</strong>
+          </p>
+          <p className="chinese menu-wine-note">{menuPage.wineNoteZh}</p>
+
+          {site.menuPdfUrl !== "#" && (
+            <p className="menu-pdf-link">
+              <a href={site.menuPdfUrl} target="_blank" rel="noopener noreferrer">
+                Download full menu (PDF)
+              </a>
+            </p>
+          )}
+
+          <MenuPageTabs categories={menuCategories} />
+        </div>
+
+        <MenuDownloadSection />
       </div>
     </SiteShell>
   );

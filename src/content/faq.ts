@@ -1,178 +1,123 @@
 import type { FaqSection } from "./types";
+import { dsdImage } from "./locationImages";
+import { site } from "./site";
 
 export const faqIntro = {
-  title: "I really need to speak to someone!",
-  paragraphs: [
-    "If your query is not covered by the below guide, you can contact us directly.",
-    "For enquiries related to Covent Garden, please email: cg@plazakhaogaeng.com",
-    "For enquiries related to Borough Yards, please email: by@plazakhaogaeng.com",
-    "For enquiries related to Tottenham Court Road, please email: tcr@plazakhaogaeng.com",
-    "For enquiries related to events at either restaurant, please email: events@plazakhaogaeng.com",
-    "Please note that due to the volume of emails, it may take us up to 48 hours to respond to emails. We do not have telephone contact.",
-  ],
+  heroTitle: "FAQ",
+  heroTitleZh: "常见问题",
+  heroImage: dsdImage("Dim Sum Duck 090426-3518.jpg"),
+  title: "Frequently Asked Questions",
+  titleZh: "常见问题",
 };
 
 export const faqSections: FaqSection[] = [
   {
-    title: "MAKING A BOOKING",
+    title: "Bookings",
     items: [
       {
-        question: "How do I book?",
-        answer:
-          "Bookings are managed exclusively online for reservations of up to 12 people at Covent Garden, 16 people at Tottenham Court Road, and 22 people at Borough Yards. You can book for up to 2 months in advance. Due to card details being required to secure your booking, we cannot accept reservations via email.",
+        question: "How do I make a booking?",
+        answer: "At both restaurants we are currently walk-in only.",
       },
       {
-        question: "What about bookings for large parties?",
+        question: "Are you able to seat large parties?",
         answer:
-          "The maximum party size that we can accommodate – outside of a private hire – is a group of 24 for Covent Garden, 16 guests for Tottenham Court Road and 22 guests for Borough Yards. Please note we cannot accommodate requests for separate bookings to be seated together.",
-      },
-      {
-        question: "I can't see availability for the date I want.",
-        answer:
-          "We retain some walk-in tables on a first-come, first-serve basis. Once all the spaces are full, we run a virtual queue. Kindly note that the waitlist can take up to 2 hours during peak times and we are usually unable to accommodate large groups of walk-ins.",
-      },
-      {
-        question: "Event Enquiries",
-        answer:
-          "If you're looking to host a semi-private or private event with us please email at events@plazakhaogaeng.com with your preferred date, time, and party size.",
-      },
-      {
-        question: "What is a pre-theatre booking?",
-        answer:
-          "Pre-theatre bookings are reservations that offer a reduced table time of 1 hour at Plaza Khao Gaeng Tottenham Court Road and Covent Garden.",
+          "At DSD Pentonville Road, we can accommodate walk-ins for larger parties. At DSD King's Cross Road, our maximum seating is 4 people (5 at a squeeze).",
       },
     ],
   },
   {
-    title: "EXISTING BOOKINGS",
+    title: "Walk-Ins",
     items: [
       {
-        question: "Can I change/cancel my reservation?",
-        answer:
-          'You can modify or cancel your booking via the "Manage Reservation" & "Cancel Reservation" links in your confirmation email, subject to the cancellation terms.',
-      },
-      {
-        question: "I'm late to my reservation!",
-        answer:
-          "We'll hold your table for up to 15 minutes. If you are running later than that, we will do our best to accommodate you, but this might mean that your time at the table will be limited.",
-      },
-      {
-        question: "No-shows/cancellations",
-        answer:
-          "Table reservations can be made through our website via SevenRooms. We kindly ask for at least 24 hours' notice for cancellations. No-shows or late cancellations may incur a charge in line with the terms shown at the time of booking.",
+        question: "What are your non peak hours for walk-in?",
+        answer: "Monday – Friday: 11:30 AM – 5 PM and after 8:00 PM.",
       },
     ],
   },
   {
-    title: "MISC",
+    title: "Allergies & Dietary Requirements",
+    alwaysVisible: true,
+    notice: `Please be aware that nuts (including peanuts and sesame) are used extensively throughout our kitchen, and many of our dishes contain or may come into contact with gluten. Some dishes are also prepared using pork fat.
+
+Due to the risk of cross-contamination, we may not be able to cater safely for guests with severe nut, sesame, or gluten allergies. If you have any allergies, intolerances, or dietary requirements, please speak to a member of our team before ordering. We recommend that guests with severe allergies carefully consider whether our restaurant is suitable for their needs.`,
     items: [
       {
-        question: "Gift cards",
+        question: "Is your food kosher or halal?",
         answer:
-          "Gift cards are available to purchase via our website and are valid for 10 months from the date of purchase unless otherwise stated. They are non-refundable and cannot be exchanged for cash. Lost or stolen cards cannot be replaced.",
+          "Unfortunately, our food is not kosher or halal, as we use different types of meat in our kitchen. We thank you for your understanding.",
       },
     ],
   },
   {
-    title: "ABOUT YOUR VISIT",
+    title: "Ahead of Your Visit",
     items: [
       {
-        question: "Are children welcome?",
+        question: "Is your restaurant wheelchair accessible?",
         answer:
-          "Children of all ages are welcome before 7pm, however, we are unable to accommodate any children after 7pm. We are unable to accommodate prams or buggies.",
+          "At DSD Pentonville Road, there are steps at the entrance. At DSD King's Cross Road, there is outside seating but limited space between tables, which may make access difficult for wheelchair users. If you require assistance or accessible seating, please let us know in advance and we will do our best to accommodate you. We apologise for any inconvenience and thank you for your understanding.",
       },
       {
-        question: "Do you have step-free access?",
+        question: "Do you serve alcohol?",
         answer:
-          "At the moment, Tottenham Court Road does not have step free access. At Borough Yards, please be aware the restaurant is split on two levels. In Covent Garden, step-free access is available through Arcade.",
+          "Yes! Please refer to our drinks menu for the full selection.",
       },
       {
-        question: "I have a food allergy, can I dine at Plaza Khao Gaeng?",
+        question: "Are you BYOB?",
         answer:
-          "We cater for most food allergies, however, we are unable to accommodate allergies to alliums. Please note, we have only a limited selection of dishes that are suitable for coeliacs, due to the presence of soy sauce.",
+          "Unfortunately, we do not allow outside food or drinks in our restaurant. We offer a wide range of drinks—please refer to our drinks menu and wine list.",
       },
       {
-        question: "What types of menus of menus do have?",
+        question: "Do you have a kids' menu?",
         answer:
-          "We have a range of menus across all three restaurants, these include: Main menus, Vegetarian menus, Group menus for 4+, and Lunch set menus (Borough Yards and Tottenham Court Road).",
+          "We do not currently have a kids' menu, but many of our dishes are suitable for children.",
       },
       {
-        question: "Do you offer pre-theatre dining?",
+        question: "Are you pet friendly?",
         answer:
-          "Yes, at Plaza Khao Gaeng Tottenham Court Road and Plaza Khao Gaeng Covent Garden we offer pre-theatre bookings.",
+          "At DSD Pentonville Road, we do not allow dogs due to indoor seating. At DSD King's Cross Road, we may accommodate small dogs in our outdoor canopy seating, depending on availability and on the space available.",
       },
       {
-        question: "Do you serve halal meat?",
-        answer: "Our meat is not halal.",
-      },
-      {
-        question: "Do you cater for vegans?",
+        question: "Do you offer delivery or takeaway?",
         answer:
-          "Yes, we have vegan options on our menu, just ask your server when you arrive and they will advise.",
-      },
-      {
-        question: "Can we bring our own wine?",
-        answer:
-          "You can bring your own wine subject to a corkage fee of £35 per 750ml bottle, or £50 for sparkling.",
-      },
-      {
-        question: "Can we bring our own cake?",
-        answer: "We do not currently offer a cakeage service.",
-      },
-      {
-        question: "Do you allow dogs in the restaurant?",
-        answer:
-          "We allow small, well-behaved dogs at all of our restaurants.",
-      },
-      {
-        question: "Do you accept cash?",
-        answer:
-          "No, we are only able to accept payments by credit or debit card.",
+          "At present, we do not offer delivery services. We look forward to welcoming you to dine with us in the restaurant.",
       },
     ],
   },
   {
-    title: "ABOUT PLAZA KHAO GAENG",
+    title: "Other Questions",
     items: [
       {
-        question: "Is Plaza Khao Gaeng in the Michelin Guide?",
+        question: "I've lost or left an item at the restaurant. What should I do?",
         answer:
-          "Yes, Plaza Khao Gaeng features in the Michelin Guide and was awarded a Michelin Bib Gourmand in 2023.",
+          "Our team will do their best to help locate your item. If found, we will store it safely until you can collect it. Please contact us via WhatsApp or Instagram for assistance.",
       },
       {
-        question: "What is a Khao Gaeng?",
+        question: "How do I contact you for further assistance?",
+        answer: `Please send us a message on WhatsApp ${site.social.whatsappDisplay} or Instagram, and we will respond as soon as possible.`,
+      },
+    ],
+  },
+  {
+    title: "Payments",
+    items: [
+      {
+        question: "Which credit cards do you accept?",
         answer:
-          "Khao Gaeng is a traditional Thai style of eating where rice is served with a selection of cooked dishes such as curries and stir-fries.",
+          "We accept most major credit cards, but we do not currently accept American Express or international cards.",
       },
       {
-        question: "What cuisine is Plaza Khao Gaeng?",
+        question: "How do I pay?",
         answer:
-          "Plaza Khao Gaeng serves true Southern Thai cuisine, inspired by coastal and jungle regions of southern Thailand.",
+          "We accept both card and cash payments. If possible, we appreciate cash payments, as this helps reduce card processing fees for our small business. Thank you for your support.",
       },
+    ],
+  },
+  {
+    title: "Location",
+    items: [
       {
-        question: "Where do you get your produce from?",
-        answer:
-          "Many of our Thai herbs and ingredients are grown at founder, Luke Farrell's, own Ryewater Nursery in Dorset.",
-      },
-      {
-        question: "When did you open in Tottenham Court Road?",
-        answer:
-          "Plaza Khao Gaeng opened at Tottenham Court Road inside Arcade Food Hall in April 2022.",
-      },
-      {
-        question: "When did you open in Borough Yards?",
-        answer:
-          "Plaza Khao Gaeng opened its Borough Yards restaurant in November 2025.",
-      },
-      {
-        question: "When did you open in Covent Garden?",
-        answer:
-          "Plaza Khao Gaeng opened its Covent Garden restaurant in May 2026.",
-      },
-      {
-        question: "Is Plaza part of Chaiyo Restaurants?",
-        answer:
-          "Chaiyo Restaurants is a London-based Thai restaurant group focused on bold, regional Thai cooking and vibrant dining experiences.",
+        question: "What is the nearest station?",
+        answer: "Our nearest underground station is King's Cross St Pancras Station.",
       },
     ],
   },

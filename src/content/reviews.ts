@@ -1,0 +1,105 @@
+import type { Review } from "./types";
+
+export const reviews: Review[] = [
+  {
+    publication: "Broadsheet",
+    title: "Dim Sum Duck, Pentonville",
+    href: "https://broadsheet.com/london/articles/dim-sum-duck-pentonville",
+    image: "/images/reviews/broadsheet-pentonville.jpg",
+  },
+  {
+    publication: "The Times",
+    title: "Dim Sum Duck restaurant review",
+    author: "Giles Coren",
+    href: "https://www.thetimes.com/life-style/food-drink/article/dim-sum-duck-restaurant-review-giles-coren-02r8svrpg",
+    image: "/images/reviews/times-giles-coren.jpg",
+  },
+  {
+    publication: "Michelin Guide",
+    title: "Dim Sum Duck",
+    href: "https://guide.michelin.com/gb/en/greater-london/london/restaurant/dimsum-duck",
+    image: "/images/reviews/michelin-guide.jpeg",
+  },
+  {
+    publication: "The New York Times",
+    title: "Essential dishes to eat in London",
+    date: "2025",
+    href: "https://www.nytimes.com/2025/09/16/t-magazine/best-food-london-restaurants.html",
+    image: "/images/reviews/nyt-essential-dishes.jpg",
+  },
+  {
+    publication: "The Times",
+    title: "Marina O'Loughlin reviews Chameleon, Lurra, Dim Sum and Duck",
+    author: "Marina O'Loughlin",
+    href: "https://www.thetimes.com/life-style/food-drink/article/marina-oloughlin-reviews-chameleon-lurra-dimsum-and-duck-london-kings-cross-dsl95t2qn",
+    image: "/images/reviews/times-marina-oloughlin.jpg",
+  },
+  {
+    publication: "Time Out London",
+    title: "Dim Sum Duck is opening a second location in the city",
+    date: "Jan 2026",
+    href: "https://www.timeout.com/london/news/dim-sum-duck-one-of-the-best-chinese-restaurants-in-london-is-opening-a-second-location-in-the-city-012626",
+    image: "/images/reviews/timeout-second-location.jpg",
+  },
+  {
+    publication: "Time Out London",
+    title: "King's Cross restaurants",
+    href: "https://www.timeout.com/london/restaurants/kings-cross-restaurants",
+    image: "/images/reviews/timeout-kings-cross.jpg",
+  },
+  {
+    publication: "Time Out London",
+    title: "London's best dim sum restaurants",
+    href: "https://www.timeout.com/london/food-drink/londons-best-dim-sum-restaurants",
+    image: "/images/reviews/timeout-best-dim-sum.jpg",
+  },
+  {
+    publication: "The Infatuation",
+    title: "Dim Sum and Duck",
+    href: "https://www.theinfatuation.com/london/reviews/dimsum-and-duck",
+    image: "/images/reviews/infatuation-dimsum-and-duck.jpg",
+  },
+  {
+    publication: "The Infatuation",
+    title: "Best lunch in King's Cross",
+    href: "https://www.theinfatuation.com/london/guides/best-lunch-kings-cross-granary-square-coal-drops-yard",
+    image: "/images/reviews/infatuation-best-lunch-kings-cross.jpg",
+  },
+  {
+    publication: "The Infatuation",
+    title: "Best dim sum in London",
+    href: "https://www.theinfatuation.com/london/guides/best-dim-sum-london",
+    image: "/images/reviews/infatuation-best-dim-sum.jpg",
+  },
+  {
+    publication: "The Infatuation",
+    title: "Dim Sum Duck, Pentonville Road",
+    href: "https://www.theinfatuation.com/london/reviews/dim-sum-duck-pentonville-road",
+    image: "/images/reviews/infatuation-pentonville.jpg",
+  },
+  {
+    publication: "High Life (British Airways)",
+    title: "The best Chinese dishes in London and where to find them",
+    href: "https://www.bahighlife.com/destinations/the-best-chinese-dishes-in-london-and-where-to-find-them",
+    image: "/images/reviews/bahighlife-chinese-dishes.jpg",
+  },
+  {
+    publication: "Hot Dinners",
+    title: "Dim Sum Duck second restaurant opens in King's Cross",
+    date: "Jan 2026",
+    href: "https://www.hot-dinners.com/2026012614788/Gastroblog/Latest-news/dim-sum-duck-second-restaurant-kings-cross-pentonville-road",
+    image: "/images/reviews/hot-dinners-second-restaurant.jpg",
+  },
+  {
+    publication: "London on the Inside",
+    title: "One of London's best dim sum spots has opened a second restaurant",
+    href: "https://londontheinside.com/one-of-londons-best-dim-sum-spots-has-opened-a-second-restaurant/",
+    image: "/images/reviews/londontheinside-second-restaurant.jpg",
+  },
+  {
+    publication: "The Good Food Guide",
+    title: "Dim Sum Duck",
+    href: "https://www.thegoodfoodguide.co.uk/restaurant/dim-sum-duck/id/44272",
+    image: "/images/reviews/good-food-guide.jpg",
+  },
+];

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowButton } from "./ArrowButton";
 
 type SectionBarProps = {
@@ -26,37 +25,10 @@ export function SectionBar({
   );
 }
 
-type ItalicLinkProps = {
-  href?: string;
-  children: React.ReactNode;
-  onClick?: () => void;
-};
-
-export function ItalicLink({ href, children, onClick }: ItalicLinkProps) {
-  if (href) {
-    return (
-      <span className="clearfaceitalic">
-        <Link href={href}>{children}</Link>
-      </span>
-    );
-  }
-
+export function ItalicLink({ children }: { children: React.ReactNode }) {
   return (
     <span className="clearfaceitalic">
-      <button
-        type="button"
-        onClick={onClick}
-        style={{
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-          font: "inherit",
-          color: "inherit",
-          textDecoration: "underline",
-        }}
-      >
-        {children}
-      </button>
+      <em>{children}</em>
     </span>
   );
 }

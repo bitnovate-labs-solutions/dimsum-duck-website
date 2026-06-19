@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { site } from "@/content";
+import { BrandName } from "@/components/BrandName";
+import {
+  footerLocations,
+  footerOpeningHours,
+  legalLinks,
+  site,
+} from "@/content";
 
 export function Footer() {
   return (
@@ -28,11 +34,11 @@ export function Footer() {
                           <div className="wp-block-kadence-image kb-image8e6666-f7">
                             <figure className="aligncenter size-full">
                               <img
-                                src="/images/uploads/Plaza.png"
-                                alt="Plaza"
-                                className="kb-img"
-                                width={450}
-                                height={253}
+                                src={site.logoBlue}
+                                alt={site.name}
+                                className="kb-img dsd-footer-logo"
+                                width={320}
+                                height={100}
                               />
                             </figure>
                           </div>
@@ -56,51 +62,88 @@ export function Footer() {
                                       </div>
                                       <div className="wp-block-kadence-column kadence-column78567b-2b">
                                         <div className="kt-inside-inner-col">
-                                          <h6 className="kt-adv-heading77aaa1-4c wp-block-kadence-advancedheading has-blue-color has-text-color">
-                                            BOROUGH
+                                          {footerLocations.map((location) => (
+                                            <h6
+                                              key={location.name}
+                                              className="kt-adv-heading77aaa1-4c wp-block-kadence-advancedheading has-blue-color has-text-color footer-location"
+                                            >
+                                              <span className="footer-uppercase">
+                                                {location.name}
+                                              </span>
+                                              <br />
+                                              <a
+                                                href={location.googleMapsUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                              >
+                                                {location.address
+                                                  .split("\n")
+                                                  .map((line) => (
+                                                    <span key={line}>
+                                                      {line}
+                                                      <br />
+                                                    </span>
+                                                  ))}
+                                              </a>
+                                            </h6>
+                                          ))}
+
+                                          <h6 className="kt-adv-heading3048ae-b6 wp-block-kadence-advancedheading has-blue-color has-text-color footer-hours">
+                                            <span className="footer-uppercase">
+                                              {footerOpeningHours.title}
+                                            </span>
                                             <br />
-                                            Arch 207, 18 Stoney St
-                                            <br />
-                                            London SE1 9AD
-                                            <br />
-                                            <a href="mailto:by@plazakhaogaeng.com">
-                                              by@plazakhaogaeng.com
+                                            {footerOpeningHours.lines.map(
+                                              (line) => (
+                                                <span key={line}>
+                                                  {line}
+                                                  <br />
+                                                </span>
+                                              ),
+                                            )}
+                                          </h6>
+
+                                          <div className="footer-instagram-wrap">
+                                            <a
+                                              href={site.social.instagram}
+                                              className="footer-instagram"
+                                              target="_blank"
+                                              rel="noopener noreferrer"
+                                              aria-label="Instagram @dimsumandduck"
+                                            >
+                                              <svg
+                                                viewBox="0 0 24 24"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                              >
+                                                <rect
+                                                  x="2.5"
+                                                  y="2.5"
+                                                  width="19"
+                                                  height="19"
+                                                  rx="5"
+                                                  ry="5"
+                                                  fill="none"
+                                                  stroke="currentColor"
+                                                  strokeWidth="1.75"
+                                                />
+                                                <circle
+                                                  cx="12"
+                                                  cy="12"
+                                                  r="4.25"
+                                                  fill="none"
+                                                  stroke="currentColor"
+                                                  strokeWidth="1.75"
+                                                />
+                                                <circle
+                                                  cx="17.2"
+                                                  cy="6.8"
+                                                  r="1.1"
+                                                  fill="currentColor"
+                                                />
+                                              </svg>
                                             </a>
-                                          </h6>
-
-                                          <h6 className="kt-adv-heading8c9cb4-af wp-block-kadence-advancedheading has-blue-color has-text-color">
-                                            COVENT GARDEN
-                                            <br />
-                                            6 Bedford St
-                                            <br />
-                                            London WC2E 9HZ
-                                            <br />
-                                            <a href="mailto:cg@plazakhaogaeng.com">
-                                              cg@plazakhaogaeng.com
-                                            </a>
-                                          </h6>
-
-                                          <h6 className="kt-adv-heading5939d5-b1 wp-block-kadence-advancedheading has-blue-color has-text-color" />
-
-                                          <h6 className="kt-adv-headingc9ce38-b5 wp-block-kadence-advancedheading has-blue-color has-text-color">
-                                            TOTTENHAM COURT ROAD
-                                            <br />
-                                            103-105 New Oxford St
-                                            <br />
-                                            London WC1A 1DB
-                                            <br />
-                                            <a href="mailto:tcr@plazakhaogaeng.com">
-                                              tcr@plazakhaogaeng.com
-                                            </a>
-                                          </h6>
-
-                                          <h6 className="kt-adv-heading3048ae-b6 wp-block-kadence-advancedheading has-blue-color has-text-color">
-                                            OPENING HOURS
-                                            <br />
-                                            {site.openingHours.weekday}
-                                            <br />
-                                            {site.openingHours.sunday}
-                                          </h6>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -110,17 +153,21 @@ export function Footer() {
 
                               <div className="wp-block-kadence-column kadence-column871469-6f kvs-sm-false">
                                 <div className="kt-inside-inner-col">
-                                  <h5 className="kt-adv-heading11871b-41 wp-block-kadence-advancedheading has-blue-color has-text-color">
-                                    <Link href="/faq">FAQ</Link>
-                                  </h5>
-                                  <h5 className="kt-adv-heading7afed4-38 wp-block-kadence-advancedheading has-blue-color has-text-color">
-                                    <Link href="/privacy">PRIVACY</Link>
-                                  </h5>
-                                  <h5 className="kt-adv-heading66fcf0-51 wp-block-kadence-advancedheading has-blue-color has-text-color">
-                                    <Link href="/cookies">COOKIES</Link>
-                                  </h5>
-                                  <h5 className="kt-adv-headingce49e5-bf wp-block-kadence-advancedheading has-blue-color has-text-color">
-                                    © {site.copyrightYear}
+                                  {legalLinks.map((link) => (
+                                    <h5
+                                      key={link.href}
+                                      className="kt-adv-heading11871b-41 wp-block-kadence-advancedheading has-blue-color has-text-color footer-legal"
+                                    >
+                                      <Link
+                                        href={link.href}
+                                        className="footer-uppercase"
+                                      >
+                                        {link.label}
+                                      </Link>
+                                    </h5>
+                                  ))}
+                                  <h5 className="kt-adv-headingce49e5-bf wp-block-kadence-advancedheading has-blue-color has-text-color footer-copyright">
+                                    © {site.copyrightYear} <BrandName />
                                   </h5>
                                 </div>
                               </div>
@@ -128,50 +175,6 @@ export function Footer() {
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-
-                  <div className="kb-row-layout-wrap kb-row-layout-id6d9719-cb alignfull has-cream-background-color kt-row-has-bg wp-block-kadence-rowlayout">
-                    <div className="kt-row-column-wrap kt-has-2-columns kt-row-layout-equal kt-tab-layout-inherit kt-mobile-layout-equal kt-row-valign-middle">
-                      {site.partnerLinks.map((partner, index) => (
-                        <div
-                          key={partner.name}
-                          className={`wp-block-kadence-column ${
-                            index === 0
-                              ? "kadence-columnf04716-4e"
-                              : "kadence-column5275cd-45"
-                          }`}
-                        >
-                          <div className="kt-inside-inner-col">
-                            <div
-                              className={`wp-block-kadence-image ${
-                                index === 0 ? "kb-image3a7998-c6" : "kb-image1430a9-90"
-                              }`}
-                            >
-                              <figure
-                                className={
-                                  index === 0
-                                    ? "alignright size-full"
-                                    : "size-full"
-                                }
-                              >
-                                <a
-                                  href={partner.href}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  aria-label={`${partner.name} - link to website`}
-                                >
-                                  <img
-                                    src={partner.image}
-                                    alt={partner.name}
-                                    className="kb-img"
-                                  />
-                                </a>
-                              </figure>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
                     </div>
                   </div>
                 </div>

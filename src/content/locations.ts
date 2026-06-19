@@ -1,82 +1,130 @@
 import type { Location } from "./types";
+import { dsdImage } from "./locationImages";
+import { menuPdfFiles, sharedFoodMenus } from "./menuPdfs";
 
 export const locations: Location[] = [
   {
-    slug: "covent-garden",
-    name: "Covent Garden",
-    nameThai: "โคเวนต์การ์เด้น",
-    address: "6 Bedford St, London WC2E 9HZ",
-    email: "cg@plazakhaogaeng.com",
-    bookingUrl:
-      "https://www.sevenrooms.com/explore/plazakhaogaengcoventgarden/reservations/create/search",
-    careersUrl:
-      "https://www.peoplebank.com/pb3/corporate/jksrestaurants/advertsearch.php?p_Location=Plaza+Covent+Garden&p_Frontend_Dept=&do_search=Show+Vacancies",
-    heroImage: "/images/uploads/26.4.24-COVENT-GARDEN-ON-SITE-202.jpg",
-    subtitle: "COVENT GARDEN",
-    description:
-      "Our third location in central London, just off the bustling Covent Garden Market.",
-    reservationsTitle: "RESERVATIONS & GROUPS",
-    reservationsText:
-      "Plaza Covent Garden is well suited to larger groups and private events — from parties of 7+ dining from our Talung Set Menu, to bar hires, full restaurant takeovers and bespoke events. Menus are designed for sharing, with dishes served across the table in the style of a traditional raan khao gaeng.",
-    reservationsCta: "Enquire now",
-    reservationsCtaHref: "mailto:events@plazakhaogaeng.com",
-    menuDescription:
-      "Highlighting new regional cuisine embracing coconut-charcoal grills, turmeric-heavy curries simmered in clay pots, and our most rural expression of khao gaeng cooking.",
-    menuLinks: [
-      { label: "DRINKS", href: "#" },
-      { label: "FOOD", href: "#" },
+    slug: "pentonville-road",
+    name: "Pentonville Road",
+    nameChinese: "彭顿维尔路",
+    address: "186 Pentonville Road, London, N1 9JP",
+    googleMapsUrl: "https://share.google/rmK41h4RIadiO8jyu",
+    heroImage: dsdImage("Dim Sum Duck 090426-3560.jpg"),
+    introImage: dsdImage("Dim Sum Duck 090426-3579.jpg"),
+    introImageAlt: "Dim Sum Duck Pentonville Road dining room and open kitchen",
+    gallery: [
+      {
+        src: dsdImage("Dim Sum Duck 090426-3560.jpg"),
+        alt: "Dim Sum Duck Pentonville Road restaurant interior",
+        category: "interior",
+      },
+      {
+        src: dsdImage("Dim Sum Duck 090426-2922.jpg"),
+        alt: "Dim Sum Duck restaurant exterior and storefront",
+        category: "exterior",
+      },
+      {
+        src: dsdImage("Dim Sum Duck 090426-2596.jpg"),
+        alt: "Handmade dim sum and roast duck at Dim Sum Duck",
+        category: "food",
+      },
+      {
+        src: dsdImage("Dim Sum Duck 090426-2660.jpg"),
+        alt: "In-house roasted duck at Dim Sum Duck",
+        category: "food",
+      },
+      {
+        src: dsdImage("Dim Sum Duck 090426-2624.jpg"),
+        alt: "Assorted dim sum dishes at Dim Sum Duck",
+        category: "food",
+      },
+    ],
+    menuIntro:
+      "Our larger Pentonville Road menu includes a dedicated wine list and an expanded drinks selection.",
+    menuIntroZh: "彭顿维尔路店提供专属酒单及更丰富的饮品选择。",
+    menuItems: [
+      ...sharedFoodMenus,
+      {
+        id: "drinks-desserts-pentonville",
+        labelEn: "Drinks & Desserts",
+        file: menuPdfFiles.drinksPentonville,
+      },
+      {
+        id: "wine-list",
+        labelEn: "Wine List",
+        file: menuPdfFiles.winePentonville,
+        exclusive: true,
+      },
+    ],
+    hours: "Open everyday from 11:30am–10pm (kitchen closes at 9:30pm).",
+    hoursShort: "11:30am – 10pm Everyday",
+    reservationMethod: "Walk-in only",
+    reservationMethodZh: "仅限到店",
+    description: "",
+    detailParagraphs: [
+      "Opened in 2026, this location is just a 1-minute walk from our original restaurant. The space is twice as large and offers fully indoor seating. We also have larger tables available, making it more suitable for bigger parties.",
+      "Our drinks selection at this location is even more extensive, featuring a dedicated wine list and Asahi on tap, available by the pint or half pint. Our food is handmade and prepared to the same exceptional standards as at our original location.",
+      "At this venue you can expect a more comfortable dining experience, with dimmer lighting and more spacious seating.",
     ],
   },
   {
-    slug: "borough-yards",
-    name: "Borough Yards",
-    nameThai: "บะระยาร์ดส",
-    address: "Arch 207, 18 Stoney St, London SE1 9AD",
-    email: "by@plazakhaogaeng.com",
-    bookingUrl:
-      "https://www.sevenrooms.com/explore/plazakhaogaengborough/reservations/create/search",
-    careersUrl:
-      "https://www.peoplebank.com/pb3/corporate/jksrestaurants/advertsearch.php?p_Location=Plaza+Khao+Gaeng+-+Borough&p_Frontend_Dept=&do_search=Show+Vacancies",
-    heroImage: "/images/uploads/25.10.23-PLAZA-BOROUGH-1152-1.jpg",
-    subtitle: "Borough Yards",
-    description:
-      "Our second location south of the river, tucked into the railway arches of Stoney Street, on the edge of Borough Market.",
-    reservationsTitle: "Borough Yards GROUP Bookings",
-    reservationsText:
-      "Plaza Borough Yards is perfectly suited to larger groups and private events, be it parties of 7-16 guests dining from our Samrub Set Menu, or takeovers of our first-floor mezzanine for up to 35 guests. Both are bookable below, or you can make an enquiry for private events here.",
-    reservationsCta: "Reserve now",
-    menuDescription:
-      "A selection of Southern Thai specialities, including our Plaza Samrub menu, bespoke to this location.",
-    menuLinks: [
-      { label: "DRINKS", href: "#" },
-      { label: "FOOD", href: "#" },
-      { label: "EVENTS", href: "#" },
+    slug: "kings-cross-road",
+    name: "King's Cross Road",
+    nameChinese: "国王十字路",
+    address: "124 King's Cross Road, London WC1X 9DS",
+    googleMapsUrl: "https://share.google/L9wacmkOhq1y9uKet",
+    heroImage: dsdImage("Dim Sum Duck 090426-3592.jpg"),
+    introImage: dsdImage("Dim Sum Duck 090426-3587.jpg"),
+    introImageAlt: "Dim Sum Duck King's Cross Road dining room",
+    gallery: [
+      {
+        src: dsdImage("Dim Sum Duck 090426-3592.jpg"),
+        alt: "Dim Sum Duck King's Cross Road dining room",
+        category: "interior",
+      },
+      {
+        src: dsdImage("Dim Sum Duck 090426-2922.jpg"),
+        alt: "Dim Sum Duck restaurant exterior and storefront",
+        category: "exterior",
+      },
+      {
+        src: dsdImage("Dim Sum Duck 090426-2450.jpg"),
+        alt: "Steamed soup dumplings at Dim Sum Duck",
+        category: "food",
+      },
+      {
+        src: dsdImage("Dim Sum Duck 090426-2660.jpg"),
+        alt: "In-house roasted duck at Dim Sum Duck",
+        category: "food",
+      },
+      {
+        src: dsdImage("Dim Sum Duck 090426-3449.jpg"),
+        alt: "Handmade dim sum being prepared at Dim Sum Duck",
+        category: "food",
+      },
     ],
-  },
-  {
-    slug: "tottenham-court-road",
-    name: "Tottenham Court Road",
-    nameThai: "ท็อตแนมคอร์ตโรด",
-    address: "103-105 New Oxford St, London WC1A 1DB",
-    email: "tcr@plazakhaogaeng.com",
-    bookingUrl:
-      "https://www.sevenrooms.com/explore/plazakhaogaengtcr/reservations/create/search",
-    careersUrl:
-      "https://www.peoplebank.com/pb3/corporate/jksrestaurants/advertsearch.php?p_Location=Plaza+Khao+Gaeng+-+Tottenham+Court+Road&p_Frontend_Dept=&do_search=Show+Vacancies",
-    heroImage: "/images/uploads/DSC08408.jpg",
-    subtitle: "Tottenham Court Road",
-    description:
-      "Our first Plaza, situated on the mezzanine above Arcade Food Hall.",
-    reservationsTitle: "GROUP Bookings",
-    reservationsText:
-      "Plaza Tottenham Court Road is available for larger group bookings for up to 16 guests, dining from our Deep South menu, with reservations available below. You can also make an enquiry for private events here.",
-    reservationsCta: "Reserve now",
-    menuDescription:
-      "A kaleidoscope of curries and searing stir-fries, alongside vibrant salads and snacks to pick over, all hailing from Thailand's Southern provinces.",
-    menuLinks: [
-      { label: "DRINKS", href: "#" },
-      { label: "FOOD", href: "#" },
-      { label: "EVENTS", href: "#" },
+    menuIntro:
+      "Classic Cantonese dim sum and roast duck, handmade fresh every day at our original location.",
+    menuIntroZh: "国王十字路原创店，每日手工制作经典点心与烧鸭。",
+    menuItems: [
+      ...sharedFoodMenus,
+      {
+        id: "drinks-desserts-kings-cross",
+        labelEn: "Drinks & Desserts",
+        file: menuPdfFiles.drinksKingsCross,
+      },
+    ],
+    hours:
+      "Weekdays & Saturdays: 12:00pm–5:00pm, 6:00pm–10:00pm\nSundays: 11:30am–5:00pm, 6:00pm–10:00pm\nKitchen closes at 9:30pm.",
+    hoursShort: "12 – 5pm & 6 – 10pm Everyday",
+    reservationMethod: "Walk-in only",
+    reservationMethodZh: "仅限到店",
+    description: "",
+    listingHeading: "Our Original Location",
+    detailParagraphs: [
+      "This is where it all started. Our original restaurant introduced classic Cantonese cooking, prepared with care you can taste, and has become well known for its delicious food and the queues of guests eager to dine with us.",
+      "The venue is smaller and more intimate, with indoor seating as well as a covered outdoor canopy area. It's a lively, fast-paced, no-fuss space, perfect for those looking for a casual dining experience.",
+      "This location is walk-in only and best suited for smaller parties of up to 4–5 guests.",
     ],
   },
 ];

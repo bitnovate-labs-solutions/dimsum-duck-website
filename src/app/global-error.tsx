@@ -17,8 +17,8 @@ export default function GlobalError({
           alignItems: "center",
           justifyContent: "center",
           background: "#F7F0E9",
-          color: "#273D7F",
-          fontFamily: "Georgia, serif",
+          color: "#2B4B6F",
+          fontFamily: '"Cooper BT", Georgia, serif',
         }}
       >
         <div style={{ textAlign: "center", padding: "2rem" }}>
@@ -28,7 +28,7 @@ export default function GlobalError({
             type="button"
             onClick={reset}
             style={{
-              background: "#273D7F",
+              background: "#2B4B6F",
               color: "#fff",
               border: "none",
               padding: "0.75rem 1.5rem",

@@ -1,10 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { mainNav, site } from "@/content";
-import { useModal } from "./ModalProvider";
 
 type HeaderProps = {
   variant?: "overlay" | "cream";
@@ -13,7 +11,6 @@ type HeaderProps = {
 export function Header({ variant = "cream" }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [stuck, setStuck] = useState(false);
-  const { openBook, openCareers } = useModal();
 
   useEffect(() => {
     document.body.classList.toggle("mobile-active", mobileOpen);
@@ -30,22 +27,6 @@ export function Header({ variant = "cream" }: HeaderProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleNavClick = (
-    e: React.MouseEvent,
-    action?: "book" | "careers",
-  ) => {
-    if (action === "book") {
-      e.preventDefault();
-      openBook();
-      setMobileOpen(false);
-    }
-    if (action === "careers") {
-      e.preventDefault();
-      openCareers();
-      setMobileOpen(false);
-    }
-  };
-
   const leftNav = mainNav.slice(0, 3);
   const rightNav = mainNav.slice(3);
 
@@ -55,30 +36,6 @@ export function Header({ variant = "cream" }: HeaderProps) {
         className={`header ${variant === "cream" ? "cream" : ""} ${stuck ? "stick" : ""}`}
       >
         <nav className="main-nav" aria-label="Main">
-          <a
-            href={site.social.instagram}
-            className="nav-instagram"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          />
-          <a
-            href={site.social.tiktok}
-            className="nav-tiktok"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="TikTok"
-          />
-
-          <button
-            type="button"
-            className="mobilebook"
-            onClick={openBook}
-            aria-label="Make a reservation"
-          >
-            BOOK
-          </button>
-
           <input
             type="checkbox"
             id="menu-toggle"
@@ -103,17 +60,14 @@ export function Header({ variant = "cream" }: HeaderProps) {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span>{item.thai}</span>
-                      <br />
+                      {item.chinese && <span>{item.chinese}</span>}
+                      {item.chinese && <br />}
                       {item.label}
                     </a>
                   ) : (
-                    <Link
-                      href={item.href}
-                      onClick={(e) => handleNavClick(e, item.action)}
-                    >
-                      <span>{item.thai}</span>
-                      <br />
+                    <Link href={item.href}>
+                      {item.chinese && <span>{item.chinese}</span>}
+                      {item.chinese && <br />}
                       {item.label}
                     </Link>
                   )}
@@ -123,15 +77,10 @@ export function Header({ variant = "cream" }: HeaderProps) {
 
             <div className="nav-logo">
               <Link href="/" aria-label={site.name}>
-                <Image
-                  src={
-                    variant === "cream" ? site.logoBlue : site.logoWhite
-                  }
+                <img
+                  src={site.logoBlue}
                   alt={site.name}
-                  width={200}
-                  height={85}
-                  priority
-                  style={{ width: "auto", height: "85px" }}
+                  className="nav-logo-img"
                 />
               </Link>
             </div>
@@ -145,17 +94,14 @@ export function Header({ variant = "cream" }: HeaderProps) {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span>{item.thai}</span>
-                      <br />
+                      {item.chinese && <span>{item.chinese}</span>}
+                      {item.chinese && <br />}
                       {item.label}
                     </a>
                   ) : (
-                    <Link
-                      href={item.href}
-                      onClick={(e) => handleNavClick(e, item.action)}
-                    >
-                      <span>{item.thai}</span>
-                      <br />
+                    <Link href={item.href}>
+                      {item.chinese && <span>{item.chinese}</span>}
+                      {item.chinese && <br />}
                       {item.label}
                     </Link>
                   )}
@@ -178,20 +124,14 @@ export function Header({ variant = "cream" }: HeaderProps) {
                     rel="noopener noreferrer"
                     onClick={() => setMobileOpen(false)}
                   >
-                    <span>{item.thai}</span>
-                    <br />
+                    {item.chinese && <span>{item.chinese}</span>}
+                    {item.chinese && <br />}
                     {item.label}
                   </a>
                 ) : (
-                  <Link
-                    href={item.action ? "#" : item.href}
-                    onClick={(e) => {
-                      handleNavClick(e, item.action);
-                      if (!item.action) setMobileOpen(false);
-                    }}
-                  >
-                    <span>{item.thai}</span>
-                    <br />
+                  <Link href={item.href} onClick={() => setMobileOpen(false)}>
+                    {item.chinese && <span>{item.chinese}</span>}
+                    {item.chinese && <br />}
                     {item.label}
                   </Link>
                 )}
