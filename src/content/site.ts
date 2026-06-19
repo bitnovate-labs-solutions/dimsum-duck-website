@@ -37,8 +37,8 @@ export const site = {
   copyrightYear: 2026,
   menuPdfUrl: "#",
   assets: {
-    heroVideo: "/hero/hero-video.mp4",
-    heroPoster: dsdImage("Dim Sum Duck 090426-3499.jpg"),
+    heroMedia: "/hero/hero-video.webp",
+    heroPoster: "/hero/hero-poster.webp",
     blueTexture: dsdImage("Dim Sum Duck 090426-2783.jpg"),
     footerBackground: dsdImage("Dim Sum Duck 090426-3560.jpg"),
   },

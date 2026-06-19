@@ -5,7 +5,7 @@ import { ourStoryImage } from "./ourStoryImages";
 
 export const homePage = {
   hero: {
-    video: "/hero/hero-video.mp4",
+    media: "/hero/hero-video.webp",
     poster: "/hero/hero-poster.webp",
     logo: "/logos/logo-2.png",
     title1: "Handmade Dim Sum & In-House Roasted Duck",
