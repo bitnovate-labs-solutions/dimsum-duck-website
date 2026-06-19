@@ -34,7 +34,7 @@ export function HomePageContent() {
         {/* Hero */}
         <div className="kb-row-layout-wrap kb-row-layout-id6_6f4c1f-76 alignfull kt-row-has-bg wp-block-kadence-rowlayout dsd-hero">
           <div className="dsd-hero-bg">
-            <HeroVideo src={hero.video} />
+            <HeroVideo src={hero.video} poster={hero.poster} />
           </div>
           <div className="dsd-hero-content">
             <h1 className="dsd-hero-title has-cream-color">{hero.title1}</h1>

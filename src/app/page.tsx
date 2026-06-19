@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  preload(homePage.hero.poster, { as: "image", fetchPriority: "high" });
   preload(homePage.hero.video, { as: "video", type: "video/mp4" });
 
   return (

@@ -260,16 +260,28 @@ figure .kb-img {
   inset: 0;
   overflow: hidden;
   z-index: 0;
-  background-color: var(--color-primary);
 }
 
-.dsd-hero-video {
+.dsd-hero-poster {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  z-index: 0;
+}
+
+.dsd-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
   opacity: 0;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.5s ease;
 }
 
 .dsd-hero-video--ready {
