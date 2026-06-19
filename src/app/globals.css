@@ -275,13 +275,6 @@ figure .kb-img {
   z-index: 0;
 }
 
-.dsd-hero-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(43, 75, 111, 0.55);
-}
-
 .dsd-hero-content {
   position: relative;
   z-index: 1;
