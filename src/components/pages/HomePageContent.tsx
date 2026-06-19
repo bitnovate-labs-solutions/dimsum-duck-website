@@ -33,7 +33,12 @@ export function HomePageContent() {
       <div className="postContent">
         {/* Hero */}
         <div className="kb-row-layout-wrap kb-row-layout-id6_6f4c1f-76 alignfull kt-row-has-bg wp-block-kadence-rowlayout dsd-hero">
-          <div className="dsd-hero-bg">
+          <div
+            className="dsd-hero-bg"
+            style={{
+              backgroundImage: `url(${hero.poster})`,
+            }}
+          >
             <HeroBackground poster={hero.poster} src={hero.media} />
           </div>
           <div className="dsd-hero-content">

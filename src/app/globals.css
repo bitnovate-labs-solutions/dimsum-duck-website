@@ -261,6 +261,9 @@ figure .kb-img {
   overflow: hidden;
   z-index: 0;
   background-color: var(--color-primary);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .dsd-hero-poster,
@@ -279,12 +282,6 @@ figure .kb-img {
 
 .dsd-hero-media {
   z-index: 1;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-.dsd-hero-media--ready {
-  opacity: 1;
 }
 
 .dsd-hero-bg::after {

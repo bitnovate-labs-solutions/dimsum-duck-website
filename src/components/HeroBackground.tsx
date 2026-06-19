@@ -1,15 +1,9 @@
-"use client";
-
-import { useState } from "react";
-
 type HeroBackgroundProps = {
   poster: string;
   src: string;
 };
 
 export function HeroBackground({ poster, src }: HeroBackgroundProps) {
-  const [ready, setReady] = useState(false);
-
   return (
     <>
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -24,9 +18,10 @@ export function HeroBackground({ poster, src }: HeroBackgroundProps) {
       <img
         src={src}
         alt=""
-        className={`dsd-hero-media${ready ? " dsd-hero-media--ready" : ""}`}
+        className="dsd-hero-media"
+        loading="eager"
         decoding="async"
-        onLoad={() => setReady(true)}
+        fetchPriority="high"
       />
     </>
   );
