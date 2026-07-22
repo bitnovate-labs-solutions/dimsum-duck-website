@@ -4,32 +4,6 @@ import { dsdImage } from "./locationImages";
 import { ourStoryImage } from "./ourStoryImages";
 
 export const homePage = {
-  hero: {
-    media: "/hero/hero-video.mp4",
-    logo: "/logos/logo-2.png",
-    title1: "Handmade Dim Sum & In-House Roasted Duck",
-    title1Zh: "手工点心与店内烧鸭",
-    title2: "Made Fresh Everyday",
-    title2Zh: "每日新鲜制作",
-    ctaLocations: { label: "Locations", href: "/locations" },
-    ctaMenu: { label: "Menu", href: "/menus" },
-  },
-  about: {
-    label: "About us",
-    labelZh: "关于我们",
-    heading: "Authentic Cantonese recipes, made by hand every day",
-    headingZh: "正宗粤菜，每日手工制作",
-    paragraphs: [
-      "Dim Sum Duck celebrates the craft of Cantonese cooking — dim sum shaped by hand each morning, roast duck prepared over a careful 24-hour process, and dishes rooted in family tradition.",
-      "From our original King's Cross Road restaurant to our larger Pentonville Road location, everything we serve is made with heart, precision, and the same dedication that built our reputation one table at a time.",
-    ],
-    imageLeft: dsdImage("Dim Sum Duck 090426-2596.jpg"),
-    imageRight: dsdImage("Dim Sum Duck 090426-2660.jpg"),
-    imageRightAlt: "Roast duck",
-    imageCenter: dsdImage("Dim Sum Duck 090426-3110.jpg"),
-    imageCenterAlt: "Handmade dim sum",
-    backgroundImage: dsdImage("Dim Sum Duck 090426-2783.jpg"),
-  },
   walkIn: {
     label: "Walk-in",
     labelZh: "到店用餐",
@@ -41,16 +15,14 @@ export const homePage = {
   menu: {
     label: "MENU",
     labelZh: "菜单",
-    description:
-      "Our dishes are always fresh and full of classic Chinese flavors. Each dish is a standout on its own, and our menu also includes a variety of house-blend drinks and teas.",
-    descriptionZh:
-      "我们的菜肴始终保持新鲜，充满经典中式风味。每道菜都独具特色，菜单还包括多种特调饮品和茶。",
     cta: "Explore our menu",
     ctaHref: "/menus",
     imageLeft: dsdImage("Dim Sum Duck 090426-2624.jpg"),
     imageLeftAlt: "Assorted dim sum",
     imageRight: dsdImage("Dim Sum Duck 090426-2450.jpg"),
     imageRightAlt: "Steamed soup dumplings",
+    imageBottom: dsdImage("Dim Sum Duck 090426-3110.jpg"),
+    imageBottomAlt: "Handmade dim sum",
     wineNote:
       "Our dedicated wine list is exclusive to Dim Sum Duck Pentonville Road.",
   },
@@ -141,10 +113,6 @@ export const menuPage = {
   heroImage: pageHeroImage("menu"),
   heading: "Handmade Dim Sum & In-House Roasted Duck, Made Fresh Everyday",
   headingZh: "手工点心与店内烧鸭，每日新鲜制作",
-  intro:
-    "Our dishes are always fresh and full of classic Chinese flavors. Each dish is a standout on its own, and our menu also includes a variety of house-blend drinks and teas.",
-  introZh:
-    "我们的菜肴始终保持新鲜，充满经典中式风味。每道菜都独具特色，菜单还包括多种特调饮品和茶。",
   wineNote:
     "Our dedicated wine list is exclusive to Dim Sum Duck Pentonville Road.",
   wineNoteZh: "专属酒单仅在彭顿维尔路店提供。",

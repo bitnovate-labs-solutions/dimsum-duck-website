@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Serif_SC } from "next/font/google";
+import { Kalam, Ma_Shan_Zheng, Noto_Serif_SC } from "next/font/google";
 import { site } from "@/content";
 import "./globals.css";
 
@@ -8,6 +8,20 @@ const notoSerifSC = Noto_Serif_SC({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-noto-serif-sc",
+});
+
+const kalam = Kalam({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-kalam",
+});
+
+const maShanZheng = Ma_Shan_Zheng({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-ma-shan-zheng",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +42,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={notoSerifSC.variable}>
+    <html
+      lang="en"
+      className={`${notoSerifSC.variable} ${kalam.variable} ${maShanZheng.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

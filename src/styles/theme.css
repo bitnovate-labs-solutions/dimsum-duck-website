@@ -31,7 +31,7 @@ body {
 }
 .content {
   width: 90%;
-  margin: 130px auto 0;
+  margin: 108px auto 0;
 }
 .contenthome {
   width: 100%;
@@ -71,12 +71,12 @@ a img {
   width: 100%;
   position: absolute;
   z-index: 1000;
-  height: 110px;
+  height: 88px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.2);
-  --nav-logo-height: 80px;
+  --nav-logo-height: 64px;
 }
 .header .logo {
   position: fixed;
@@ -928,6 +928,7 @@ h2.fullruled {
 }
 .footer .sidebarItem {
   width: 100%;
+  background: transparent;
 }
 .footer h2,
 .footer h3,
@@ -994,6 +995,7 @@ h2.fullruled {
 .footer .footer-content {
   width: 100%;
   position: relative;
+  background: transparent;
 }
 .footer .footer-content h3 {
   font-size: 1.5em;
@@ -1036,8 +1038,28 @@ h2.fullruled {
   z-index: 1;
 }
 .footer-panel {
-  position: sticky !important;
-  bottom: 0;
+  position: relative !important;
+  z-index: 2;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  background-color: var(--color-cream) !important;
+}
+
+.footer .sidebarItem.dsd-footer-panel-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  margin-top: -8rem;
+  background-color: var(--color-cream) !important;
+  border-top-left-radius: 8rem;
+  border-top-right-radius: 8rem;
+  overflow: hidden;
+}
+
+.footer-panel > .kt-row-column-wrap {
+  position: relative;
   z-index: 2;
 }
 
@@ -1125,8 +1147,8 @@ button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
     text-transform: none;
   }
   .header {
-    height: 90px;
-    --nav-logo-height: 75px;
+    height: 76px;
+    --nav-logo-height: 58px;
   }
   .mobilebook {
     position: absolute;
@@ -1161,7 +1183,7 @@ button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
   .footer-reveal-bg {
     height: 25vh;
   }
-  .footer-panel {
+  .dsd-footer-panel-wrap {
     margin-top: -10vh;
   }
   .postContent p {
@@ -1292,15 +1314,15 @@ button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
     display: none;
   }
   .header {
-    height: 90px;
-    --nav-logo-height: 75px;
+    height: 76px;
+    --nav-logo-height: 58px;
   }
   .contentwrap {
     flex-direction: column;
   }
   .content {
     width: 100%;
-    margin: 80px auto 0;
+    margin: 68px auto 0;
   }
   .contenthome .postContent {
     max-width: 90%;
@@ -1406,7 +1428,7 @@ button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
   .footer-reveal-bg {
     height: 25vh;
   }
-  .footer-panel {
+  .dsd-footer-panel-wrap {
     margin-top: -10vh;
   }
 }

@@ -23,7 +23,7 @@ const heroes = [
   },
   {
     id: "faq",
-    source: "images/dimsumduck/Dim Sum Duck 090426-3518.jpg",
+    source: "images/dimsumduck/Dim Sum Duck 090426-3383.jpg",
   },
   {
     id: "our-story",

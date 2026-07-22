@@ -13,6 +13,7 @@ export function Footer() {
       <div className="footer-content">
         <div className="sidebarItem">
           <div className="kb-row-layout-wrap kb-row-layout-idblock-11_ef76b6-1e alignfull kt-row-has-bg footer-reveal-bg wp-block-kadence-rowlayout">
+            <div className="kt-row-layout-overlay kt-row-overlay-normal dsd-footer-reveal-overlay" />
             <div className="kt-row-column-wrap kt-has-1-columns kt-row-layout-equal kt-tab-layout-inherit kt-mobile-layout-row kt-row-valign-bottom kt-inner-column-height-full">
               <div className="wp-block-kadence-column kadence-column386f2d-6c">
                 <div className="kt-inside-inner-col" />
@@ -21,8 +22,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="sidebarItem">
-          <div className="kb-row-layout-wrap kb-row-layout-idblock-12_fe5e01-b3 alignfull kt-row-has-bg footer-panel wp-block-kadence-rowlayout">
+        <div className="sidebarItem dsd-footer-panel-wrap">
+          <div className="kb-row-layout-wrap kb-row-layout-idblock-12_fe5e01-b3 kt-row-has-bg footer-panel wp-block-kadence-rowlayout">
             <div className="kt-row-layout-overlay kt-row-overlay-normal" />
             <div className="kt-row-column-wrap kt-has-1-columns kt-row-layout-equal kt-tab-layout-inherit kt-mobile-layout-row kt-row-valign-top">
               <div className="wp-block-kadence-column kadence-columna778bc-bb">

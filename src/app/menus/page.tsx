@@ -25,8 +25,6 @@ export default function MenuPage() {
         <div className="postContent">
           <h3>{menuPage.heading}</h3>
           <p className="chinese menu-page-subtitle">{menuPage.headingZh}</p>
-          <p>{menuPage.intro}</p>
-          <p className="chinese">{menuPage.introZh}</p>
           <p className="menu-wine-note">
             <strong>{menuPage.wineNote}</strong>
           </p>

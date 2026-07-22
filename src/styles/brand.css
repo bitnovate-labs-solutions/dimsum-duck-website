@@ -12,6 +12,9 @@
   --font-script: "Feeling Passionate", "ClearfaceItalic", cursive;
   --font-body: var(--font-noto-serif-sc), "PingFang SC", "Microsoft YaHei", Georgia,
     serif;
+  --font-story: var(--font-kalam), "Kalam", "Segoe Print", cursive;
+  --font-story-zh: var(--font-ma-shan-zheng), "Ma Shan Zheng", "Kaiti SC", "STKaiti",
+    cursive;
 }
 
 @font-face {

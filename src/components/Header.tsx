@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { mainNav, site } from "@/content";
+import { mainNav, mainNavLeft, mainNavRight, site } from "@/content";
 
 type HeaderProps = {
   variant?: "overlay" | "cream";
@@ -27,9 +27,6 @@ export function Header({ variant = "cream" }: HeaderProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const leftNav = mainNav.slice(0, 3);
-  const rightNav = mainNav.slice(3);
-
   return (
     <>
       <header
@@ -52,7 +49,7 @@ export function Header({ variant = "cream" }: HeaderProps) {
 
           <div className="nav-inner">
             <ul className="nav-left">
-              {leftNav.map((item) => (
+              {mainNavLeft.map((item) => (
                 <li key={item.label}>
                   {item.external ? (
                     <a
@@ -86,7 +83,7 @@ export function Header({ variant = "cream" }: HeaderProps) {
             </div>
 
             <ul className="nav-right">
-              {rightNav.map((item) => (
+              {mainNavRight.map((item) => (
                 <li key={item.label}>
                   {item.external ? (
                     <a
