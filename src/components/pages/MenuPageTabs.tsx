@@ -1,16 +1,23 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { MenuCategory } from "@/content/types";
+import type { MenuTab } from "@/content/types";
 
 type MenuPageTabsProps = {
-  categories: MenuCategory[];
+  tabs: MenuTab[];
 };
 
-export function MenuPageTabs({ categories }: MenuPageTabsProps) {
-  const [activeId, setActiveId] = useState(categories[0]?.id ?? "");
+export function MenuPageTabs({ tabs }: MenuPageTabsProps) {
+  const defaultId = tabs[0]?.id ?? "";
+  const [activeId, setActiveId] = useState(defaultId);
+  const [openCategoryId, setOpenCategoryId] = useState<string | null>(null);
+  const [hasMounted, setHasMounted] = useState(false);
   const tabsRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   useEffect(() => {
     const root = tabsRef.current;
@@ -39,6 +46,7 @@ export function MenuPageTabs({ categories }: MenuPageTabsProps) {
   const selectTab = useCallback(
     (id: string) => {
       setActiveId(id);
+      setOpenCategoryId(null);
       window.history.replaceState(null, "", `#${id}`);
       requestAnimationFrame(scrollToTabs);
     },
@@ -46,75 +54,142 @@ export function MenuPageTabs({ categories }: MenuPageTabsProps) {
   );
 
   useEffect(() => {
+    if (!hasMounted) return;
+
     const hash = window.location.hash.replace("#", "");
-    if (hash && categories.some((category) => category.id === hash)) {
+    if (hash && tabs.some((tab) => tab.id === hash)) {
       setActiveId(hash);
       requestAnimationFrame(scrollToTabs);
     }
-  }, [categories, scrollToTabs]);
+  }, [hasMounted, tabs, scrollToTabs]);
 
-  const activeCategory =
-    categories.find((category) => category.id === activeId) ?? categories[0];
+  const activeTab = tabs.find((tab) => tab.id === activeId) ?? tabs[0];
 
-  if (!activeCategory) return null;
+  if (!activeTab) return null;
+
+  const toggleCategory = (categoryId: string) => {
+    setOpenCategoryId((current) =>
+      current === categoryId ? null : categoryId,
+    );
+  };
 
   return (
     <div ref={tabsRef} className="menu-tabs">
-      <div
-        ref={navRef}
-        className="menu-category-nav"
-        role="tablist"
-        aria-label="Menu sections"
-      >
-        {categories.map((category) => {
-          const isActive = category.id === activeId;
-          return (
-            <button
-              key={category.id}
-              type="button"
-              role="tab"
-              id={`tab-${category.id}`}
-              aria-selected={isActive}
-              aria-controls={`panel-${category.id}`}
-              className={`menu-category-tab${isActive ? " is-active" : ""}`}
-              onClick={() => selectTab(category.id)}
-            >
-              {category.titleEn}
-              <span className="chinese"> {category.titleZh}</span>
-            </button>
-          );
-        })}
+      <div ref={navRef} className="menu-tabs-header">
+        <div
+          className="menu-category-nav"
+          role="tablist"
+          aria-label="Menu sections"
+        >
+          {tabs.map((tab) => {
+            const isActive = tab.id === activeId;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                role="tab"
+                id={`tab-${tab.id}`}
+                aria-selected={isActive}
+                aria-controls={`panel-${tab.id}`}
+                className={`menu-category-tab${isActive ? " is-active" : ""}`}
+                onClick={() => selectTab(tab.id)}
+              >
+                {tab.titleEn}
+                <span className="chinese"> {tab.titleZh}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       <div className="menu-sections">
-        {categories.map((category) => {
-          const isActive = category.id === activeId;
+        {tabs.map((tab) => {
+          const isActive = tab.id === activeId;
           return (
             <section
-              key={category.id}
-              id={category.id}
+              key={tab.id}
+              id={tab.id}
               role="tabpanel"
-              aria-labelledby={`tab-${category.id}`}
-              hidden={!isActive}
+              aria-labelledby={`tab-${tab.id}`}
+              {...(!isActive ? { "aria-hidden": true as const } : {})}
               className={`menu-section${isActive ? " is-active" : ""}`}
             >
               <h2 className="wp-block-heading ruledblue menu-section-title">
-                {category.titleEn}
-                <span className="chinese"> {category.titleZh}</span>
+                {tab.titleEn}
+                <span className="chinese"> {tab.titleZh}</span>
               </h2>
 
-              <div className="menu-container">
-                <ul className="menu-dish-list">
-                  {category.items.map((item) => (
-                    <li key={item.nameEn} className="menu-dish-item">
-                      <span className="menu-dish-en">{item.nameEn}</span>
-                      <span className="menu-dish-zh chinese">
-                        {item.nameZh}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="menu-category-accordions">
+                {tab.categories.map((category) => {
+                  const isOpen = openCategoryId === category.id;
+                  return (
+                    <div
+                      key={category.id}
+                      className={`menu-category-accordion${isOpen ? " is-open" : ""}`}
+                    >
+                      <button
+                        type="button"
+                        className="menu-category-accordion-trigger"
+                        aria-expanded={isOpen}
+                        aria-controls={`category-panel-${category.id}`}
+                        onClick={() => toggleCategory(category.id)}
+                      >
+                        <span className="menu-category-accordion-heading">
+                          <span className="menu-category-accordion-title">
+                            {category.titleEn}
+                          </span>
+                          <span className="menu-category-accordion-title-zh chinese">
+                            {category.titleZh}
+                          </span>
+                        </span>
+                        <span
+                          className="menu-category-accordion-icon"
+                          aria-hidden="true"
+                        >
+                          {isOpen ? "\u2212" : "+"}
+                        </span>
+                      </button>
+
+                      <div
+                        id={`category-panel-${category.id}`}
+                        className="menu-category-accordion-panel"
+                        {...(!isOpen ? { "aria-hidden": true as const } : {})}
+                      >
+                        <div className="menu-container">
+                          <ul className="menu-dish-list">
+                            {category.items.map((item) => (
+                              <li
+                                key={`${category.id}-${item.nameEn}`}
+                                className="menu-dish-item"
+                              >
+                                <span className="menu-dish-en">
+                                  {item.nameEn}
+                                </span>
+                                <span className="menu-dish-zh chinese">
+                                  {item.nameZh}
+                                </span>
+                                {item.description ? (
+                                  <span className="menu-dish-description">
+                                    {item.description}
+                                  </span>
+                                ) : null}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
+
+              {tab.notes && tab.notes.length > 0 ? (
+                <div className="menu-tab-notes">
+                  {tab.notes.map((note) => (
+                    <p key={note}>{note}</p>
+                  ))}
+                </div>
+              ) : null}
             </section>
           );
         })}

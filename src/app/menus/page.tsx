@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { SiteShell } from "@/components/SiteShell";
 import { PageHero } from "@/components/PageHero";
 import { MenuPageTabs } from "@/components/pages/MenuPageTabs";
-import { MenuDownloadSection } from "@/components/pages/MenuDownloadSection";
-import { menuCategories } from "@/content/menu";
+// import { MenuDownloadSection } from "@/components/pages/MenuDownloadSection";
+import { menuTabs } from "@/content/menu";
 import { menuPage } from "@/content/pages";
 import { site } from "@/content";
 
@@ -38,10 +38,10 @@ export default function MenuPage() {
             </p>
           )}
 
-          <MenuPageTabs categories={menuCategories} />
+          <MenuPageTabs tabs={menuTabs} />
         </div>
 
-        <MenuDownloadSection />
+        {/* <MenuDownloadSection /> */}
       </div>
     </SiteShell>
   );

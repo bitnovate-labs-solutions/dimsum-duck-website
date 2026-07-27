@@ -135,6 +135,4 @@ export const reviewsPage = {
   heroImage: pageHeroImage("reviews"),
   title: "Reviews",
   titleZh: "评价",
-  heading: "What the press says",
-  headingZh: "媒体报道",
 };

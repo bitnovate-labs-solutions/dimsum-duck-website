@@ -10,6 +10,7 @@ export const mainNavLeft: NavItem[] = [
 export const mainNavRight: NavItem[] = [
   { chinese: "关于我们", label: "Our Story", href: "/our-story" },
   { chinese: "常见问题", label: "FAQs", href: "/faq" },
+  { chinese: "评价", label: "Reviews", href: "/reviews" },
 ];
 
 export const mainNav: NavItem[] = [...mainNavLeft, ...mainNavRight];

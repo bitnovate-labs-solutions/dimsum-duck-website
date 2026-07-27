@@ -57,13 +57,26 @@ export type FaqSection = {
 export type MenuItem = {
   nameEn: string;
   nameZh: string;
+  /** Optional tasting note / description (e.g. wine list) */
+  description?: string;
 };
 
+/** Accordion group within a menu tab */
 export type MenuCategory = {
   id: string;
   titleEn: string;
   titleZh: string;
   items: MenuItem[];
+};
+
+/** Top-level menu tab (Full Menu, Dim Sum, etc.) */
+export type MenuTab = {
+  id: string;
+  titleEn: string;
+  titleZh: string;
+  categories: MenuCategory[];
+  /** Footer notes shown under this tab (e.g. service charge) */
+  notes?: string[];
 };
 
 export type MenuDownloadGroup = {
