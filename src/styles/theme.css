@@ -77,6 +77,7 @@ a img {
   justify-content: center;
   background: rgba(0, 0, 0, 0.2);
   --nav-logo-height: 64px;
+  transition: background-color 0.25s ease;
 }
 .header .logo {
   position: fixed;
@@ -104,6 +105,23 @@ a img {
   left: 0;
   right: 0;
   width: 100%;
+}
+/* Solid bar when scrolled so nav titles stay readable over page content */
+.header.stick:not(.cream) {
+  background: var(--color-cream);
+}
+.header.stick:not(.cream) .nav-left a,
+.header.stick:not(.cream) .nav-right a {
+  color: var(--color-primary);
+}
+.header.stick:not(.cream) .menu-toggle-label::before,
+.header.stick:not(.cream) .menu-toggle-label::after {
+  background: url("/images/theme/bracket-blue.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.header.stick:not(.cream) .menu-toggle-label span {
+  background-color: var(--color-primary);
 }
 .mobilebook {
   display: none;
