@@ -757,6 +757,25 @@ button.dsd-arrow-btn {
   height: auto;
 }
 
+.footer .wp-block-kadence-image.kb-image8e6666-f7 {
+  margin-top: 0.75rem;
+}
+
+.footer .kb-row-layout-wrap.kb-row-layout-id483605-1a {
+  margin-top: 0.5rem;
+}
+
+.footer .kb-row-layout-ide5fcb3-22 > .kt-row-column-wrap {
+  padding-top: 0;
+}
+
+.footer
+  .kadence-column78567b-2b
+  > .kt-inside-inner-col
+  > .footer-location:first-child {
+  margin-top: 0;
+}
+
 /* FAQ page */
 .faq-page .faq-section {
   margin-top: 2.5rem;
