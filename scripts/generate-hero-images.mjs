@@ -11,31 +11,31 @@ const outDir = path.join(publicDir, "images", "heroes");
 const heroes = [
   {
     id: "menu",
-    source: "images/dimsumduck/Dim Sum Duck 090426-2624.jpg",
+    source: "images/dimsumduck/Dim Sum Duck 090426-2624.webp",
   },
   {
     id: "locations",
-    source: "images/dimsumduck/Dim Sum Duck 090426-2937.jpg",
+    source: "images/dimsumduck/Dim Sum Duck 090426-2937.webp",
   },
   {
     id: "reviews",
-    source: "images/dimsumduck/Dim Sum Duck 090426-3527.jpg",
+    source: "images/dimsumduck/Dim Sum Duck 090426-3527.webp",
   },
   {
     id: "faq",
-    source: "images/dimsumduck/Dim Sum Duck 090426-3383.jpg",
+    source: "images/dimsumduck/Dim Sum Duck 090426-3383.webp",
   },
   {
     id: "our-story",
-    source: "images/ourstory/inspired by city/IMG_4286.jpg",
+    source: "images/ourstory/inspired by city/IMG_4286.webp",
   },
   {
     id: "pentonville-road",
-    source: "images/dimsumduck/Dim Sum Duck 090426-3560.jpg",
+    source: "images/dimsumduck/Dim Sum Duck 090426-3560.webp",
   },
   {
     id: "kings-cross-road",
-    source: "images/dimsumduck/Dim Sum Duck 090426-3592.jpg",
+    source: "images/dimsumduck/Dim Sum Duck 090426-3592.webp",
   },
 ];
 

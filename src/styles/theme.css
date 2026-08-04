@@ -82,7 +82,7 @@ a img {
 .header .logo {
   position: fixed;
   z-index: 10000;
-  background: url("/logos/logo-2.png") no-repeat center;
+  background: url("/logos/logo-2.webp") no-repeat center;
   width: 200px;
   background-size: contain;
   height: 100px;

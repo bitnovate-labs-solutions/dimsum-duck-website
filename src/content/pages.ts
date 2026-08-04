@@ -10,18 +10,18 @@ export const homePage = {
     text: "Both restaurants are currently walk-in only. Join us at Pentonville Road or King's Cross Road — no reservation needed.",
     cta: "Find a location",
     ctaHref: "/locations",
-    backgroundImage: dsdImage("Dim Sum Duck 090426-2924.jpg"),
+    backgroundImage: dsdImage("Dim Sum Duck 090426-2924.webp"),
   },
   menu: {
     label: "MENU",
     labelZh: "菜单",
     cta: "Explore our menu",
     ctaHref: "/menus",
-    imageLeft: dsdImage("Dim Sum Duck 090426-2624.jpg"),
+    imageLeft: dsdImage("Dim Sum Duck 090426-2624.webp"),
     imageLeftAlt: "Assorted dim sum",
-    imageRight: dsdImage("Dim Sum Duck 090426-2450.jpg"),
+    imageRight: dsdImage("Dim Sum Duck 090426-2450.webp"),
     imageRightAlt: "Steamed soup dumplings",
-    imageBottom: dsdImage("Dim Sum Duck 090426-3110.jpg"),
+    imageBottom: dsdImage("Dim Sum Duck 090426-3110.webp"),
     imageBottomAlt: "Handmade dim sum",
     wineNote:
       "Our dedicated wine list is exclusive to Dim Sum Duck Pentonville Road.",
@@ -59,7 +59,7 @@ export const ourStoryPage = {
     {
       label: "Hong Kong",
       labelZh: "香港",
-      image: ourStoryImage("IMG_7739 2.jpg"),
+      image: ourStoryImage("IMG_7739 2.webp"),
       imageAlt: "Family and community in Hong Kong",
       imageCaption: "Where it all began — family, food, and community",
       imagePosition: "left",
@@ -74,7 +74,7 @@ export const ourStoryPage = {
     {
       label: "London",
       labelZh: "倫敦",
-      image: ourStoryImage("inspired by people", "DSC01169.JPG"),
+      image: ourStoryImage("inspired by people", "DSC01169.webp"),
       imageAlt: "London Chinatown and city life",
       imageCaption: "Learning the craft in Chinatown kitchens",
       imagePosition: "right",
@@ -90,7 +90,7 @@ export const ourStoryPage = {
     {
       label: "Dim Sum Duck",
       labelZh: "点豆得",
-      image: ourStoryImage("inspired by the markets", "IMG_4512.jpg"),
+      image: ourStoryImage("inspired by the markets", "IMG_4512.webp"),
       imageAlt: "Dim Sum Duck restaurant",
       imagePosition: "left",
       paragraphsEn: [

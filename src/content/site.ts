@@ -8,9 +8,9 @@ export const site = {
   description:
     "Authentic Cantonese dim sum and in-house roasted duck, handmade fresh every day at our Pentonville Road and King's Cross Road restaurants in London.",
   url: "https://dimsumduck.co.uk",
-  logoWhite: "/logos/logo-1.png",
-  logoBlue: "/logos/logo-2.png",
-  logoHero: "/logos/logo-2.png",
+  logoWhite: "/logos/logo-1.webp",
+  logoBlue: "/logos/logo-2.webp",
+  logoHero: "/logos/logo-2.webp",
   colors: {
     primary: "#2B4B6F",
     accent: "#3BBCD4",
@@ -37,8 +37,8 @@ export const site = {
   copyrightYear: 2026,
   menuPdfUrl: "#",
   assets: {
-    blueTexture: dsdImage("Dim Sum Duck 090426-2783.jpg"),
-    footerBackground: dsdImage("Dim Sum Duck 090426-3560.jpg"),
+    blueTexture: dsdImage("Dim Sum Duck 090426-2783.webp"),
+    footerBackground: dsdImage("Dim Sum Duck 090426-3560.webp"),
   },
 } as const;
 

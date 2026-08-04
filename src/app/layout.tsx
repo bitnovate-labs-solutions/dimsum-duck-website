@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   description: site.description,
   icons: {
-    icon: [{ url: "/logos/logo-1.png", type: "image/png" }],
-    apple: [{ url: "/logos/logo-1.png", type: "image/png" }],
+    icon: [{ url: "/logos/logo-1.webp", type: "image/webp" }],
+    apple: [{ url: "/logos/logo-1.webp", type: "image/webp" }],
   },
 };
 
