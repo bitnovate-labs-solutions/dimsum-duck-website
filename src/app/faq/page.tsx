@@ -9,9 +9,14 @@ import { faqGraph, pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "FAQ",
   description:
-    "Answers about Dim Sum Duck (Dimsumduck) in King's Cross: walk-in only, opening hours, allergies, nearest station, and how to find both London restaurants.",
+    "Where is Dim Sum Duck? In King's Cross, London, UK — not Dim Dou Duck in Kuala Lumpur. Walk-in hours, allergies, nearest station, and how to find us on Google Maps.",
   path: "/faq",
-  keywords: ["Dim Sum Duck FAQ", "Dimsumduck booking", "Dim Sum Duck walk-in"],
+  keywords: [
+    "Where is Dim Sum Duck",
+    "Dim Sum Duck London",
+    "Dim Sum Duck vs Dim Dou Duck",
+    "Dim Sum Duck Google Maps",
+  ],
 });
 
 export default function FaqPage() {

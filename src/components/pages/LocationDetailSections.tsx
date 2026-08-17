@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BrandName } from "@/components/BrandName";
 import type { Location } from "@/content/types";
+import { mapsEmbedUrl, mapsSearchUrl } from "@/lib/seo";
 
 function menuHref(file: string) {
   return encodeURI(file);
@@ -57,7 +58,8 @@ export function LocationDetailSections({ location }: LocationDetailSectionsProps
           <div className="location-detail-visit-grid">
             <div className="location-detail-visit-copy">
               <p className="location-detail-visit-lead">
-                We welcome walk-in guests at {location.name}. No reservations
+                Dim Sum Duck {location.name} is a walk-in Cantonese restaurant
+                in King&apos;s Cross, London, United Kingdom. No reservations
                 required.
               </p>
               <p className="chinese location-detail-visit-lead-zh">
@@ -69,11 +71,11 @@ export function LocationDetailSections({ location }: LocationDetailSectionsProps
                   <dt>Address</dt>
                   <dd>
                     <a
-                      href={location.googleMapsUrl}
+                      href={mapsSearchUrl(location)}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {location.address}
+                      {location.address}, United Kingdom
                     </a>
                   </dd>
                 </div>
@@ -103,6 +105,25 @@ export function LocationDetailSections({ location }: LocationDetailSectionsProps
                 alt={`${location.name} exterior`}
               />
             </figure>
+          </div>
+
+          <div className="location-detail-map">
+            <iframe
+              title={`Google Map of Dim Sum Duck ${location.name}, London, United Kingdom`}
+              src={mapsEmbedUrl(location)}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+            <p className="location-detail-map-link">
+              <a
+                href={mapsSearchUrl(location)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open Dim Sum Duck {location.name}, London in Google Maps
+              </a>
+            </p>
           </div>
         </div>
       </section>

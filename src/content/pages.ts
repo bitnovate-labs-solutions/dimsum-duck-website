@@ -123,8 +123,10 @@ export const locationsPage = {
   heroTitleZh: "门店地址",
   title: "Locations",
   titleZh: "门店地址",
-  heading: "Find us in King's Cross and Pentonville.",
+  heading: "Find Dim Sum Duck in King's Cross, London.",
   headingZh: "欢迎光临国王十字与彭顿维尔店。",
+  intro:
+    "Dim Sum Duck is a walk-in Cantonese restaurant in King's Cross, London, United Kingdom — not Dim Dou Duck in Kuala Lumpur. Search Dim Sum Duck London on Google Maps for 124 King's Cross Road (WC1X 9DS) or 186 Pentonville Road (N1 9JP).",
   region: "Locations",
   heroImage: pageHeroImage("locations"),
 };

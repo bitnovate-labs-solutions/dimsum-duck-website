@@ -27,6 +27,7 @@ export type Location = {
   addressLocality: string;
   postalCode: string;
   addressCountry: string;
+  addressRegion: string;
   geo: {
     latitude: number;
     longitude: number;

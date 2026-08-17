@@ -116,8 +116,24 @@ Due to the risk of cross-contamination, we may not be able to cater safely for g
     title: "Location",
     items: [
       {
+        question: "Where is Dim Sum Duck?",
+        answer:
+          "Dim Sum Duck is in King's Cross, London, United Kingdom. We have two walk-in restaurants: 124 King's Cross Road, London WC1X 9DS, and 186 Pentonville Road, London N1 9JP. The nearest Underground station is King's Cross St Pancras.",
+      },
+      {
+        question: "Is Dim Sum Duck the same as Dim Dou Duck in Kuala Lumpur?",
+        answer:
+          "No. Dim Sum Duck (点豆得) is an independent Cantonese restaurant in London. Dim Dou Duck (点都得) in Kuala Lumpur is a different restaurant. To find us on Google or Maps, search Dim Sum Duck London or Dim Sum Duck King's Cross.",
+      },
+      {
+        question: "How do I find Dim Sum Duck on Google Maps?",
+        answer:
+          "Search Google Maps for “Dim Sum Duck King's Cross” or “Dim Sum Duck 124 King's Cross Road London”. You can also open the Google Maps links on our Locations pages for Pentonville Road and King's Cross Road.",
+      },
+      {
         question: "What is the nearest station?",
-        answer: "Our nearest underground station is King's Cross St Pancras Station.",
+        answer:
+          "Our nearest underground station is King's Cross St Pancras Station, a short walk from both Dim Sum Duck London restaurants.",
       },
     ],
   },

@@ -4,11 +4,19 @@ import { dsdImage } from "./locationImages";
 export const site = {
   name: "Dim Sum Duck",
   nameChinese: "点豆得",
-  alternateNames: ["Dimsumduck", "dimsumduck", "Dim Sum Duck 点豆得", "点豆得"],
-  title: "Dim Sum Duck (Dimsumduck) | Dim Sum & Roast Duck in King's Cross",
+  alternateNames: [
+    "Dimsumduck",
+    "Dim Sum Duck London",
+    "Dim Sum & Duck",
+    "Dim Sum and Duck",
+    "Dim Sum Duck King's Cross",
+    "点豆得",
+    "Dim Sum Duck 点豆得",
+  ],
+  title: "Dim Sum Duck London | King's Cross Dim Sum & Roast Duck",
   description:
-    "Dim Sum Duck — also known as Dimsumduck — is a walk-in Cantonese restaurant in King's Cross, London. Handmade dim sum and in-house roast duck at Pentonville Road and King's Cross Road.",
-  url: "https://dimsumduck.co.uk",
+    "Dim Sum Duck is a walk-in Cantonese restaurant in King's Cross, London, UK — handmade dim sum and in-house roast duck at 124 King's Cross Road (WC1X 9DS) and 186 Pentonville Road (N1 9JP). Search Dim Sum Duck London, not Dim Dou Duck Kuala Lumpur.",
+  url: "https://dimsumduck.com",
   locale: "en_GB",
   telephone: "+44 7344 685051",
   telephoneE164: "+447344685051",
@@ -38,7 +46,12 @@ export const site = {
     whatsapp: "https://wa.me/447344685051",
     whatsappDisplay: "07344 685051",
   },
-  contactEmail: "team@dimsumduck.co.uk",
+  profiles: [
+    "https://www.instagram.com/dimsumandduck/",
+    "https://guide.michelin.com/gb/en/greater-london/london/restaurant/dimsum-duck",
+    "https://www.tripadvisor.com/Restaurant_Review-g186338-d23608793-Reviews-Dim_Sum_Duck-London_England.html",
+  ],
+  contactEmail: "team@dimsumduck.com",
   copyrightYear: 2026,
   menuPdfUrl: "#",
   assets: {

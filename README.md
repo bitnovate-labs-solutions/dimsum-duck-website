@@ -1,6 +1,6 @@
 # Dim Sum Duck
 
-Website for [Dim Sum Duck](https://dimsumduck.co.uk/) — handmade dim sum and in-house roasted duck at Pentonville Road and King's Cross Road, London.
+Website for [Dim Sum Duck](https://dimsumduck.com/) — handmade dim sum and in-house roasted duck at Pentonville Road and King's Cross Road, London.
 
 ## Getting started
 

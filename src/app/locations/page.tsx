@@ -7,15 +7,15 @@ import { locations } from "@/content/locations";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Locations",
+  title: "Locations in London",
   description:
-    "Find Dim Sum Duck (Dimsumduck) in King's Cross, London — walk-in Cantonese restaurants at 186 Pentonville Road, N1 9JP and 124 King's Cross Road, WC1X 9DS.",
+    "Dim Sum Duck London locations in King's Cross, United Kingdom: 124 King's Cross Road, WC1X 9DS and 186 Pentonville Road, N1 9JP. Walk-in Cantonese dim sum — search Dim Sum Duck London on Google Maps.",
   path: "/locations",
   keywords: [
-    "Dim Sum Duck locations",
-    "Dimsumduck King's Cross",
-    "Dim Sum Duck Pentonville Road",
+    "Dim Sum Duck London locations",
     "Dim Sum Duck King's Cross Road",
+    "Dim Sum Duck Pentonville Road",
+    "Dim Sum Duck Google Maps",
   ],
 });
 
@@ -34,6 +34,7 @@ export default function LocationsPage() {
           <p className="chinese locations-page-subtitle">
             {locationsPage.headingZh}
           </p>
+          <p>{locationsPage.intro}</p>
           <h2 className="locations-page-region">{locationsPage.region}</h2>
 
           <div className="locations-grid">

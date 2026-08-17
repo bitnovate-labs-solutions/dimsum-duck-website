@@ -35,11 +35,11 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.name,
   keywords: [
-    "Dim Sum Duck",
-    "Dimsumduck",
-    "dimsumduck",
-    "dim sum duck",
+    "Dim Sum Duck London",
     "Dim Sum Duck King's Cross",
+    "Dimsumduck London",
+    "Dim Sum & Duck",
+    "dim sum duck",
     "Dim Sum Duck Pentonville Road",
     "Cantonese dim sum London",
     "roast duck King's Cross",
@@ -69,6 +69,10 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
+  other: {
+    "geo.region": "GB",
+    "geo.placename": "King's Cross, London",
+  },
   icons: {
     icon: [{ url: "/logos/logo-1.webp", type: "image/webp" }],
     apple: [{ url: "/logos/logo-1.webp", type: "image/webp" }],
@@ -82,7 +86,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-GB"
       className={`${notoSerifSC.variable} ${kalam.variable} ${maShanZheng.variable}`}
     >
       <body>

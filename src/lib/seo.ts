@@ -34,13 +34,13 @@ export function pageMetadata({
     title,
     description,
     keywords: [
-      "Dim Sum Duck",
-      "Dimsumduck",
-      "dimsumduck",
-      "dim sum duck",
       "Dim Sum Duck London",
-      "dim sum King's Cross",
-      "roast duck King's Cross",
+      "Dim Sum Duck King's Cross",
+      "Dimsumduck London",
+      "Dim Sum & Duck",
+      "dim sum duck",
+      "dim sum restaurant King's Cross",
+      "roast duck King's Cross London",
       ...keywords,
     ],
     alternates: { canonical: url },
@@ -67,9 +67,26 @@ function postalAddress(location: Location) {
     "@type": "PostalAddress",
     streetAddress: location.streetAddress,
     addressLocality: location.addressLocality,
+    addressRegion: location.addressRegion,
     postalCode: location.postalCode,
     addressCountry: location.addressCountry,
   };
+}
+
+export function mapsSearchQuery(location: Location) {
+  return `Dim Sum Duck ${location.streetAddress}, ${location.addressLocality}, ${location.postalCode}, United Kingdom`;
+}
+
+export function mapsSearchUrl(location: Location) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    mapsSearchQuery(location),
+  )}`;
+}
+
+export function mapsEmbedUrl(location: Location) {
+  return `https://maps.google.com/maps?q=${encodeURIComponent(
+    mapsSearchQuery(location),
+  )}&z=17&hl=en&output=embed`;
 }
 
 function openingHours(location: Location) {
@@ -136,41 +153,59 @@ function openingHours(location: Location) {
 
 export function restaurantNode(location: Location) {
   const pageUrl = absoluteUrl(`/${location.slug}`);
+  const mapUrl = mapsSearchUrl(location);
   return {
-    "@type": "Restaurant",
+    "@type": ["Restaurant", "FoodEstablishment", "LocalBusiness"],
     "@id": `${pageUrl}#restaurant`,
-    name: `${site.name} ${location.name}`,
+    name: `Dim Sum Duck ${location.name}`,
+    legalName: site.name,
     alternateName: [
-      `Dimsumduck ${location.name}`,
-      `Dim Sum Duck ${location.name}`,
+      "Dim Sum Duck London",
+      "Dimsumduck",
+      "Dim Sum & Duck",
+      `Dim Sum Duck ${location.name}, London`,
       `${site.name} ${location.nameChinese}`,
     ],
+    disambiguatingDescription: `Dim Sum Duck ${location.name} is a walk-in Cantonese restaurant in King's Cross, London, United Kingdom. It is not Dim Dou Duck in Kuala Lumpur, Malaysia.`,
     description:
       location.detailParagraphs[0] ||
-      `${site.name} ${location.name} is a walk-in Cantonese restaurant in King's Cross, London.`,
+      `Dim Sum Duck ${location.name} is a walk-in Cantonese restaurant in King's Cross, London, UK.`,
     url: pageUrl,
     image: location.gallery.map((image) => absoluteUrl(image.src)),
     telephone: site.telephoneE164,
     email: site.contactEmail,
-    servesCuisine: ["Cantonese", "Dim Sum", "Chinese", "Roast Duck"],
+    servesCuisine: ["Cantonese", "Dim Sum", "Chinese", "Hong Kong", "Roast Duck"],
     acceptsReservations: "False",
     priceRange: "££",
+    menu: absoluteUrl("/menus"),
     address: postalAddress(location),
     geo: {
       "@type": "GeoCoordinates",
       latitude: location.geo.latitude,
       longitude: location.geo.longitude,
     },
-    hasMap: [
-      location.googleMapsUrl,
-      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-        `${site.name} ${location.streetAddress} ${location.postalCode} London`,
-      )}`,
-    ],
+    hasMap: [location.googleMapsUrl, mapUrl],
     openingHoursSpecification: openingHours(location),
-    areaServed: ["King's Cross", "Pentonville", "Islington", "London"],
+    containedInPlace: {
+      "@type": "Place",
+      name: "King's Cross, London",
+      containedInPlace: {
+        "@type": "City",
+        name: "London",
+        containedInPlace: {
+          "@type": "Country",
+          name: "United Kingdom",
+        },
+      },
+    },
+    areaServed: [
+      { "@type": "Place", name: "King's Cross" },
+      { "@type": "Place", name: "Pentonville" },
+      { "@type": "City", name: "London" },
+      { "@type": "Country", name: "United Kingdom" },
+    ],
     parentOrganization: { "@id": `${siteUrl}#organization` },
-    sameAs: [site.social.instagram, location.googleMapsUrl],
+    sameAs: [...site.profiles, location.googleMapsUrl, mapUrl],
   };
 }
 
@@ -189,10 +224,20 @@ export function organizationGraph() {
         image: absoluteUrl(site.ogImage),
         email: site.contactEmail,
         telephone: site.telephoneE164,
-        sameAs: [site.social.instagram],
+        sameAs: site.profiles,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "London",
+          addressRegion: "England",
+          addressCountry: "GB",
+        },
         areaServed: {
           "@type": "City",
           name: "London",
+          containedInPlace: {
+            "@type": "Country",
+            name: "United Kingdom",
+          },
         },
       },
       {
@@ -210,15 +255,27 @@ export function organizationGraph() {
         "@id": `${siteUrl}#brand`,
         name: site.name,
         alternateName: site.alternateNames,
+        disambiguatingDescription:
+          "Dim Sum Duck is a walk-in Cantonese restaurant in King's Cross, London, United Kingdom. It is not Dim Dou Duck in Kuala Lumpur.",
         description: site.description,
         url: siteUrl,
         telephone: site.telephoneE164,
         email: site.contactEmail,
         image: absoluteUrl(site.ogImage),
-        servesCuisine: ["Cantonese", "Dim Sum", "Chinese", "Roast Duck"],
+        servesCuisine: ["Cantonese", "Dim Sum", "Chinese", "Hong Kong", "Roast Duck"],
         acceptsReservations: "False",
-        areaServed: ["King's Cross", "London"],
-        sameAs: [site.social.instagram],
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "London",
+          addressRegion: "England",
+          addressCountry: "GB",
+        },
+        areaServed: [
+          { "@type": "Place", name: "King's Cross" },
+          { "@type": "City", name: "London" },
+          { "@type": "Country", name: "United Kingdom" },
+        ],
+        sameAs: site.profiles,
         department: locations.map((location) => ({
           "@id": `${absoluteUrl(`/${location.slug}`)}#restaurant`,
         })),
