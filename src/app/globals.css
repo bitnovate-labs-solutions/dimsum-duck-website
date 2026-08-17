@@ -757,6 +757,15 @@ button.dsd-arrow-btn {
   height: auto;
 }
 
+@media (max-width: 767px) {
+  .footer .kb-image8e6666-f7.kb-image-is-ratio-size,
+  .footer .kb-image8e6666-f7 .kb-image-is-ratio-size,
+  .footer .kb-image8e6666-f7 figure,
+  .footer .dsd-footer-logo {
+    max-width: 140px;
+  }
+}
+
 .footer .wp-block-kadence-image.kb-image8e6666-f7 {
   margin-top: 0.75rem;
 }
