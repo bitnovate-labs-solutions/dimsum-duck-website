@@ -4,12 +4,20 @@ import { PageHero } from "@/components/PageHero";
 import { LocationHoverCard } from "@/components/LocationHoverCard";
 import { locationsPage } from "@/content/pages";
 import { locations } from "@/content/locations";
-import { site } from "@/content";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: `Locations - ${site.name}`,
-  description: locationsPage.heading,
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Locations",
+  description:
+    "Find Dim Sum Duck (Dimsumduck) in King's Cross, London — walk-in Cantonese restaurants at 186 Pentonville Road, N1 9JP and 124 King's Cross Road, WC1X 9DS.",
+  path: "/locations",
+  keywords: [
+    "Dim Sum Duck locations",
+    "Dimsumduck King's Cross",
+    "Dim Sum Duck Pentonville Road",
+    "Dim Sum Duck King's Cross Road",
+  ],
+});
 
 export default function LocationsPage() {
   return (

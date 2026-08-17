@@ -4,8 +4,9 @@ import { HomePageContent } from "@/components/pages/HomePageContent";
 import { site } from "@/content";
 
 export const metadata: Metadata = {
-  title: `Home - ${site.name}`,
+  title: site.title,
   description: site.description,
+  alternates: { canonical: "/" },
 };
 
 export default function HomePage() {

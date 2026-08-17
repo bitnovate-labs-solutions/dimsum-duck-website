@@ -3,12 +3,14 @@ import { SiteShell } from "@/components/SiteShell";
 import { PageHero } from "@/components/PageHero";
 import { OurStorySections } from "@/components/pages/OurStorySections";
 import { ourStoryPage } from "@/content/pages";
-import { site } from "@/content";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: `Our Story - ${site.name}`,
-  description: ourStoryPage.introTitle,
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Our Story",
+  description:
+    "The story of Dim Sum Duck (Dimsumduck): from a Hong Kong fishing village to handmade Cantonese dim sum and roast duck in King's Cross, London.",
+  path: "/our-story",
+});
 
 export default function OurStoryPage() {
   return (

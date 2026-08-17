@@ -4,10 +4,15 @@ import { dsdImage } from "./locationImages";
 export const site = {
   name: "Dim Sum Duck",
   nameChinese: "点豆得",
-  title: "Dim Sum Duck 点豆得",
+  alternateNames: ["Dimsumduck", "dimsumduck", "Dim Sum Duck 点豆得", "点豆得"],
+  title: "Dim Sum Duck (Dimsumduck) | Dim Sum & Roast Duck in King's Cross",
   description:
-    "Authentic Cantonese dim sum and in-house roasted duck, handmade fresh every day at our Pentonville Road and King's Cross Road restaurants in London.",
+    "Dim Sum Duck — also known as Dimsumduck — is a walk-in Cantonese restaurant in King's Cross, London. Handmade dim sum and in-house roast duck at Pentonville Road and King's Cross Road.",
   url: "https://dimsumduck.co.uk",
+  locale: "en_GB",
+  telephone: "+44 7344 685051",
+  telephoneE164: "+447344685051",
+  ogImage: "/images/dimsumduck/Dim%20Sum%20Duck%20090426-2624.webp",
   logoWhite: "/logos/logo-1.webp",
   logoBlue: "/logos/logo-2.webp",
   logoHero: "/logos/logo-2.webp",

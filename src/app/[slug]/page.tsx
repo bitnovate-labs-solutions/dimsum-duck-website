@@ -3,8 +3,10 @@ import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/SiteShell";
 import { PageHero } from "@/components/PageHero";
 import { LocationDetailSections } from "@/components/pages/LocationDetailSections";
+import { JsonLd } from "@/components/JsonLd";
 import { getLocation } from "@/content/locations";
 import { site } from "@/content";
+import { locationGraph, pageMetadata } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -17,15 +19,19 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const location = getLocation(slug);
-  if (!location) return { title: `Location - ${site.name}` };
+  if (!location) return { title: `Location | ${site.name}` };
 
-  return {
-    title: `${location.name} - ${site.name}`,
-    description:
-      location.listingHeading ||
-      location.detailParagraphs[0]?.slice(0, 160) ||
-      location.name,
-  };
+  return pageMetadata({
+    title: `${location.name}`,
+    description: `Dim Sum Duck ${location.name} (Dimsumduck) — walk-in Cantonese dim sum and roast duck at ${location.address}. ${location.hoursShort}.`,
+    path: `/${location.slug}`,
+    keywords: [
+      `Dim Sum Duck ${location.name}`,
+      `Dimsumduck ${location.name}`,
+      location.address,
+      location.postalCode,
+    ],
+  });
 }
 
 export default async function LocationPage({ params }: Props) {
@@ -35,6 +41,7 @@ export default async function LocationPage({ params }: Props) {
 
   return (
     <SiteShell headerVariant="overlay">
+      <JsonLd data={locationGraph(location)} />
       <PageHero
         image={location.heroImage}
         title={location.name}

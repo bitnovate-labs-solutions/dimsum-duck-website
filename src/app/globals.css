@@ -765,6 +765,12 @@ button.dsd-arrow-btn {
   margin-top: 0.5rem;
 }
 
+@media (min-width: 768px) {
+  .footer .kb-row-layout-wrap.kb-row-layout-id483605-1a {
+    margin-top: 3rem;
+  }
+}
+
 .footer .kb-row-layout-ide5fcb3-22 > .kt-row-column-wrap {
   padding-top: 0;
 }
@@ -774,6 +780,34 @@ button.dsd-arrow-btn {
   > .kt-inside-inner-col
   > .footer-location:first-child {
   margin-top: 0;
+}
+
+/* Android / non-iOS: empty desktop spacer + flex centering add gap under the logo */
+@media (max-width: 767px) {
+  @supports not (-webkit-touch-callout: none) {
+    .footer .kadence-column139b0d-ad {
+      display: none;
+    }
+
+    .footer .kb-row-layout-idf5c517-98 > .kt-row-column-wrap {
+      row-gap: 0;
+      padding-bottom: 0;
+    }
+
+    .footer .kb-row-layout-wrap.kb-row-layout-id483605-1a {
+      margin-top: 0;
+    }
+
+    .footer .wp-block-kadence-image.kb-image8e6666-f7 {
+      margin-top: 0.25rem;
+      margin-bottom: 0;
+    }
+
+    .footer .kadence-column863fee-93 > .kt-inside-inner-col,
+    .footer .kadence-columna778bc-bb > .kt-inside-inner-col {
+      justify-content: flex-start;
+    }
+  }
 }
 
 /* FAQ page */

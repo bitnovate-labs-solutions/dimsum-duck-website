@@ -23,6 +23,14 @@ export type Location = {
   name: string;
   nameChinese: string;
   address: string;
+  streetAddress: string;
+  addressLocality: string;
+  postalCode: string;
+  addressCountry: string;
+  geo: {
+    latitude: number;
+    longitude: number;
+  };
   googleMapsUrl: string;
   heroImage: string;
   introImage: string;

@@ -103,48 +103,6 @@ export function Footer() {
                                               ),
                                             )}
                                           </h6>
-
-                                          <div className="footer-instagram-wrap">
-                                            <a
-                                              href={site.social.instagram}
-                                              className="footer-instagram"
-                                              target="_blank"
-                                              rel="noopener noreferrer"
-                                              aria-label="Instagram @dimsumandduck"
-                                            >
-                                              <svg
-                                                viewBox="0 0 24 24"
-                                                aria-hidden="true"
-                                                focusable="false"
-                                              >
-                                                <rect
-                                                  x="2.5"
-                                                  y="2.5"
-                                                  width="19"
-                                                  height="19"
-                                                  rx="5"
-                                                  ry="5"
-                                                  fill="none"
-                                                  stroke="currentColor"
-                                                  strokeWidth="1.75"
-                                                />
-                                                <circle
-                                                  cx="12"
-                                                  cy="12"
-                                                  r="4.25"
-                                                  fill="none"
-                                                  stroke="currentColor"
-                                                  strokeWidth="1.75"
-                                                />
-                                                <circle
-                                                  cx="17.2"
-                                                  cy="6.8"
-                                                  r="1.1"
-                                                  fill="currentColor"
-                                                />
-                                              </svg>
-                                            </a>
-                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -167,12 +125,57 @@ export function Footer() {
                                       </Link>
                                     </h5>
                                   ))}
-                                  <h5 className="kt-adv-headingce49e5-bf wp-block-kadence-advancedheading has-blue-color has-text-color footer-copyright">
-                                    © {site.copyrightYear} <BrandName />
-                                  </h5>
                                 </div>
                               </div>
                             </div>
+                          </div>
+
+                          <div className="footer-meta-row">
+                            <div className="footer-meta-row__left">
+                              <a
+                                href={site.social.instagram}
+                                className="footer-instagram"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Instagram @dimsumandduck"
+                              >
+                                <svg
+                                  viewBox="0 0 24 24"
+                                  aria-hidden="true"
+                                  focusable="false"
+                                >
+                                  <rect
+                                    x="2.5"
+                                    y="2.5"
+                                    width="19"
+                                    height="19"
+                                    rx="5"
+                                    ry="5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="1.75"
+                                  />
+                                  <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="4.25"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="1.75"
+                                  />
+                                  <circle
+                                    cx="17.2"
+                                    cy="6.8"
+                                    r="1.1"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </a>
+                            </div>
+                            <p className="footer-copyright">
+                              <span>© {site.copyrightYear}</span>
+                              <BrandName />
+                            </p>
                           </div>
                         </div>
                       </div>

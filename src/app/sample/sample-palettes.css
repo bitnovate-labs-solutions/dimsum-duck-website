@@ -1,0 +1,130 @@
+/* Temporary client samples: cream → grey. Delete with /sample. */
+
+html[data-sample-palette="light-grey"],
+html:has([data-sample-palette="light-grey"]) {
+  --color-cream: #e6e6e6;
+  --cream: #e6e6e6;
+}
+
+html[data-sample-palette="darker-grey"],
+html:has([data-sample-palette="darker-grey"]) {
+  --color-cream: #d0d0d0;
+  --cream: #d0d0d0;
+}
+
+html[data-sample-palette="dark-grey"],
+html:has([data-sample-palette="dark-grey"]) {
+  --color-cream: #b8b8b8;
+  --cream: #b8b8b8;
+}
+
+html[data-sample-palette],
+html:has([data-sample-palette]) {
+  background: var(--color-cream);
+}
+
+html[data-sample-palette] body,
+html:has([data-sample-palette]) body {
+  background: var(--color-cream);
+}
+
+html[data-sample-palette] .dsd-walk-in-card > .kt-inside-inner-col,
+html:has([data-sample-palette]) .dsd-walk-in-card > .kt-inside-inner-col,
+html[data-sample-palette] .kadence-column6_903170-db > .kt-inside-inner-col,
+html:has([data-sample-palette]) .kadence-column6_903170-db > .kt-inside-inner-col {
+  background-color: color-mix(in srgb, var(--color-cream) 82%, transparent) !important;
+}
+
+html[data-sample-palette] .wp-block-kadence-spacer.kt-block-spacer-6_1ade08-6a .kt-divider,
+html:has([data-sample-palette]) .wp-block-kadence-spacer.kt-block-spacer-6_1ade08-6a .kt-divider,
+html[data-sample-palette] .wp-block-kadence-spacer.kt-block-spacer-6_ab017a-02 .kt-divider,
+html:has([data-sample-palette]) .wp-block-kadence-spacer.kt-block-spacer-6_ab017a-02 .kt-divider,
+html[data-sample-palette] .wp-block-kadence-spacer.kt-block-spacer-6_229ba7-86 .kt-divider,
+html:has([data-sample-palette]) .wp-block-kadence-spacer.kt-block-spacer-6_229ba7-86 .kt-divider {
+  border-top-color: var(--color-cream) !important;
+}
+
+html[data-sample-palette] .kb-row-layout-wrap.wp-block-kadence-rowlayout.kb-row-layout-id483605-1a,
+html:has([data-sample-palette])
+  .kb-row-layout-wrap.wp-block-kadence-rowlayout.kb-row-layout-id483605-1a,
+html[data-sample-palette] .kb-row-layout-wrap.wp-block-kadence-rowlayout.kb-row-layout-id6d9719-cb,
+html:has([data-sample-palette])
+  .kb-row-layout-wrap.wp-block-kadence-rowlayout.kb-row-layout-id6d9719-cb,
+html[data-sample-palette] .kb-row-layout-wrap.wp-block-kadence-rowlayout.kb-row-layout-id58e8fc-75,
+html:has([data-sample-palette])
+  .kb-row-layout-wrap.wp-block-kadence-rowlayout.kb-row-layout-id58e8fc-75 {
+  background: var(--color-cream) !important;
+}
+
+html[data-sample-palette] .menu-toggle-label::before,
+html:has([data-sample-palette]) .menu-toggle-label::before,
+html[data-sample-palette] .menu-toggle-label::after,
+html:has([data-sample-palette]) .menu-toggle-label::after {
+  background-color: var(--color-cream);
+  background-image: none;
+  -webkit-mask: url("/images/theme/bracket-cream.svg") no-repeat center / cover;
+  mask: url("/images/theme/bracket-cream.svg") no-repeat center / cover;
+}
+
+html[data-sample-palette] .cream .menu-toggle-label::before,
+html:has([data-sample-palette]) .cream .menu-toggle-label::before,
+html[data-sample-palette] .cream .menu-toggle-label::after,
+html:has([data-sample-palette]) .cream .menu-toggle-label::after,
+html[data-sample-palette] .mobile-active .menu-toggle-label::before,
+html:has([data-sample-palette]) .mobile-active .menu-toggle-label::before,
+html[data-sample-palette] .mobile-active .menu-toggle-label::after,
+html:has([data-sample-palette]) .mobile-active .menu-toggle-label::after {
+  background-color: var(--color-primary);
+  background-image: none;
+  -webkit-mask: url("/images/theme/bracket-blue.svg") no-repeat center / cover;
+  mask: url("/images/theme/bracket-blue.svg") no-repeat center / cover;
+}
+
+html[data-sample-palette] .nav-instagram,
+html:has([data-sample-palette]) .nav-instagram {
+  background: none;
+  background-color: var(--color-cream);
+  -webkit-mask: url("/images/theme/instagram-cream.svg") no-repeat center / contain;
+  mask: url("/images/theme/instagram-cream.svg") no-repeat center / contain;
+}
+
+html[data-sample-palette] .cream .nav-instagram,
+html:has([data-sample-palette]) .cream .nav-instagram {
+  background: none;
+  background-color: var(--color-primary);
+  -webkit-mask: url("/images/theme/instagram-blue.svg") no-repeat center / contain;
+  mask: url("/images/theme/instagram-blue.svg") no-repeat center / contain;
+}
+
+html[data-sample-palette] .nav-tiktok,
+html:has([data-sample-palette]) .nav-tiktok {
+  background: none;
+  background-color: var(--color-cream);
+  -webkit-mask: url("/images/theme/tiktok-cream.svg") no-repeat center / contain;
+  mask: url("/images/theme/tiktok-cream.svg") no-repeat center / contain;
+}
+
+html[data-sample-palette] .cream .nav-tiktok,
+html:has([data-sample-palette]) .cream .nav-tiktok {
+  background: none;
+  background-color: var(--color-primary);
+  -webkit-mask: url("/images/theme/tiktok-blue.svg") no-repeat center / contain;
+  mask: url("/images/theme/tiktok-blue.svg") no-repeat center / contain;
+}
+
+html[data-sample-palette] .button-cream .wp-block-button__link,
+html:has([data-sample-palette]) .button-cream .wp-block-button__link {
+  background-color: var(--color-cream);
+  background-image: none;
+  -webkit-mask: url("/images/theme/cream-arrow-button.svg") no-repeat center / contain;
+  mask: url("/images/theme/cream-arrow-button.svg") no-repeat center / contain;
+}
+
+html[data-sample-palette] .button-cream .wp-block-button__link:hover,
+html:has([data-sample-palette]) .button-cream .wp-block-button__link:hover {
+  background-color: var(--color-cream);
+  background-image: none;
+  -webkit-mask: url("/images/theme/cream-arrow-button-hover.svg") no-repeat center /
+    contain;
+  mask: url("/images/theme/cream-arrow-button-hover.svg") no-repeat center / contain;
+}

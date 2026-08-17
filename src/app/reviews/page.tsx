@@ -4,13 +4,15 @@ import { SiteShell } from "@/components/SiteShell";
 import { PageHero } from "@/components/PageHero";
 import { reviewsPage } from "@/content/pages";
 import { reviews } from "@/content/reviews";
-import { site } from "@/content";
 import type { Review } from "@/content/types";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: `Reviews - ${site.name}`,
-  description: reviewsPage.heroTitle,
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Reviews",
+  description:
+    "Dim Sum Duck (Dimsumduck) reviews from The Times, Michelin Guide, Time Out, The Infatuation, and more — King's Cross, London.",
+  path: "/reviews",
+});
 
 function ReviewCard({
   review,

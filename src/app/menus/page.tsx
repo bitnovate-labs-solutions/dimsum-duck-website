@@ -6,11 +6,19 @@ import { MenuPageTabs } from "@/components/pages/MenuPageTabs";
 import { menuTabs } from "@/content/menu";
 import { menuPage } from "@/content/pages";
 import { site } from "@/content";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: `Menu - ${site.name}`,
-  description: menuPage.heading,
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Menu",
+  description:
+    "The Dim Sum Duck (Dimsumduck) menu: handmade Cantonese dim sum, in-house roast duck, drinks, and the Pentonville Road wine list in King's Cross, London.",
+  path: "/menus",
+  keywords: [
+    "Dim Sum Duck menu",
+    "Dimsumduck menu",
+    "dim sum menu King's Cross",
+  ],
+});
 
 export default function MenuPage() {
   return (
