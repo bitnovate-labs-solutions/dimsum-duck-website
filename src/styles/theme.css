@@ -965,6 +965,23 @@ h2.fullruled {
 .footer .footer-uppercase {
   text-transform: uppercase;
 }
+.footer-hours-note-break {
+  display: none;
+}
+.footer-hours-line {
+  display: block;
+}
+.footer-hours-line + .footer-hours-line {
+  margin-top: 0.7em;
+}
+@media (max-width: 767px) {
+  .footer-hours-note-break {
+    display: block;
+  }
+  .footer-hours-line + .footer-hours-line {
+    margin-top: 0.9em;
+  }
+}
 .footer .footer-copyright {
   margin: 0;
   display: flex;

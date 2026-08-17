@@ -67,8 +67,14 @@ export const footerLocations: FooterLocation[] = [
 export const footerOpeningHours = {
   title: "OPENING HOURS",
   lines: [
-    "Pentonville Road: 11:30am – 10pm daily (kitchen closes 9:30pm)",
-    "King's Cross Road: 12 – 5pm & 6 – 10pm daily (kitchen closes 9:30pm)",
+    {
+      hours: "Pentonville Road: 11:30am – 10pm daily",
+      note: "(kitchen closes 9:30pm)",
+    },
+    {
+      hours: "King's Cross Road: 12 – 5pm & 6 – 10pm daily",
+      note: "(kitchen closes 9:30pm)",
+    },
   ],
 } as const;
 

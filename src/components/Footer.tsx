@@ -96,9 +96,13 @@ export function Footer() {
                                             <br />
                                             {footerOpeningHours.lines.map(
                                               (line) => (
-                                                <span key={line}>
-                                                  {line}
-                                                  <br />
+                                                <span
+                                                  key={line.hours}
+                                                  className="footer-hours-line"
+                                                >
+                                                  {line.hours}{" "}
+                                                  <br className="footer-hours-note-break" />
+                                                  {line.note}
                                                 </span>
                                               ),
                                             )}
